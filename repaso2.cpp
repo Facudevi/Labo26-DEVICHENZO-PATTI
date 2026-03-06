@@ -63,11 +63,11 @@ int main (void){
     prod5.precio = 7;
     prod5.fechaVenc = false;
 
-    prod6.nombre = "";
-    prod6.codBarra = "";
-    prod6.marca = "";
-    prod6.precio = ;
-    prod6.fechaVenc = ;
+    prod6.nombre = "Arroz";
+    prod6.codBarra = "3333-4444";
+    prod6.marca = "gallo";
+    prod6.precio = 30;
+    prod6.fechaVenc = true;
 
     prod7.nombre = "Queso";
     prod7.codBarra = "";
