@@ -1,13 +1,11 @@
-package Unidad_1;
-
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.Year;
+package fecha;
 
 public class Fecha {
     private int dia;
     private int mes;
     private int anio;
+    private String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+    private String[] dias = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"};
 
     public Fecha(){
         this.dia = 2;
@@ -79,7 +77,9 @@ public class Fecha {
         }
     }
 
-    public void corta(){}
+    public String corta(){
+        return dia + "-" + mes + "-" + anio;
+    }
 
 
 

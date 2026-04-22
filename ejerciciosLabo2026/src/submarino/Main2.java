@@ -1,4 +1,5 @@
-package Unidad_1;
+package submarino;
+
 import java.util.Scanner;
 
 public class Main2 {

@@ -1,4 +1,4 @@
-package Unidad_1;
+import formas.Rectangulo;
 
 public class MainParaPruebas {
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-package Unidad_1;
+package museo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package Unidad_1;
+package formas;
 
 public class Rectangulo {
     private double base;

@@ -1,4 +1,5 @@
-package Unidad_1;
+package museo;
+
 import java.time.LocalDate;
 
 public class Restaurador1 {

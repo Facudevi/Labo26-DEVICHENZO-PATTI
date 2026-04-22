@@ -1,4 +1,4 @@
-package Unidad_1;
+package persona;
 
 public class Persona {
     private String nombre;

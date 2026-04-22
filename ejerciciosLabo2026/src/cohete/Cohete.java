@@ -1,19 +1,31 @@
-package Unidad_1;
-import java.util.Scanner;
+package cohete;
 
-public class Cohete3 {
+public class Cohete {
     private String nombre;
     private int velMax;
     private double largo;
     private double ancho;
     private int cantP;
 
-    public Cohete3(String nombre, int velMax, double largo, double ancho, int cantP){
+    public Cohete(String nombre, int velMax, double largo, double ancho, int cantP){
         this.nombre = nombre;
         this.velMax = velMax;
         this.largo = largo;
         this.ancho = ancho;
         this.cantP = cantP;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    public int getVelMax() {
+        return velMax;
+    }
+    public double getLargo() {
+        return largo;
+    }
+    public int getCantP() {
+        return cantP;
     }
 
     public boolean despegar(){
@@ -23,17 +35,14 @@ public class Cohete3 {
         return false;
     }
 
-    public void activar(){
-        int propulsores;
-        Scanner input = new Scanner(System.in);
+    public void activar(int cant){
         if (despegar()){
-            System.out.println("Ingresar la cantidad de propulsores a activar:");
-            propulsores = input.nextInt();
-            if (propulsores > cantP){
-                System.out.println("Al querer activar más propulsores de los que el cohete tiene, no se ha activado ninguno");
+            System.out.println("Despegando...");
+            if (cant > cantP){
+                System.out.println("¡Error! Al querer activar más propulsores de los que el cohete tiene, no se ha activado ninguno");
             }
             else {
-                for (int i=0; i<propulsores; i++){
+                for (int i=0; i<cant; i++){
                     System.out.println("Propulsor " + (i+1) + " activado");
                 }
             }
@@ -51,7 +60,4 @@ public class Cohete3 {
             return (distancia / velMax);
         }
     }
-
-
-
 }

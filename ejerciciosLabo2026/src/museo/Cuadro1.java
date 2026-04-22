@@ -1,4 +1,4 @@
-package Unidad_1;
+package museo;
 
 public class Cuadro1 {
     private String titulo;
