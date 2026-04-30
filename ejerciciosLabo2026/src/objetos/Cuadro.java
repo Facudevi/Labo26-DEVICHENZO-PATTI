@@ -1,7 +1,5 @@
 package objetos;
-
 import persona.Restaurador;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,9 +38,9 @@ public class Cuadro {
         inventario.add(new Cuadro("Obra Moderna", "Nuevo Artista", 2024, 8));
 
         List<Restaurador> restauradores = new ArrayList<>();
-        restauradores.add(new Restaurador("Elena", "Ramos", 12354576, LocalDate.of(1970, 2, 20), 25));
-        restauradores.add(new Restaurador("Carlos", "Sanz", 23542133, LocalDate.of(1999, 12, 18), 3));
-        restauradores.add(new Restaurador("Julia", "López", 98309322, LocalDate.of(1981, 8, 11), 19));
+        restauradores.add(new Restaurador("Elena", "Ramos", LocalDate.of(1970, 2, 20), "5556", 12354576, 25));
+        restauradores.add(new Restaurador("Carlos", "Sanz", LocalDate.of(1999, 12, 18), "Recolida 5555", 23542133, 3));
+        restauradores.add(new Restaurador("Julia", "López", LocalDate.of(1981, 8, 11), "Poralin 2819", 98309322, 19));
 
         System.out.println("----JORNADA DE RESTAURACION----");
         for (int i=0; i<inventario.size(); i++){

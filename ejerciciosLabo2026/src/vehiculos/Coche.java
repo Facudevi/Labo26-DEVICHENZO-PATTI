@@ -44,9 +44,8 @@ public class Coche {
     public  void  acelerar (double incremento){
         this.velocidad += incremento;
     }
+
     public void  frenar(){
         this.velocidad = 0;
     }
-
-
 }

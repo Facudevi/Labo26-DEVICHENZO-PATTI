@@ -1,7 +1,5 @@
 package deporte;
-
 import persona.Jugador;
-
 import java.util.ArrayList;
 
 public class Equipo {

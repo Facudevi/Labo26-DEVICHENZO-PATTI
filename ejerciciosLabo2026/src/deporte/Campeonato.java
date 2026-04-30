@@ -57,7 +57,6 @@ public class Campeonato {
     }
 
 
-
     public String agregarPartido(Equipo equipo1,Equipo equipo2,int fecha){
         switch (esPartidoValido(equipo1,equipo2,fecha)){
             case 1:

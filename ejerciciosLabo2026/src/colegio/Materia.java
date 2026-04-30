@@ -80,8 +80,8 @@ public class Materia {
         ArrayList<Alumno> inscriptos3 = new ArrayList<>();
 
 
-        Alumno alumno1 = new Alumno("Juan", "Pérez", LocalDate.of(2005, 5, 15), listaNotas1, listaMaterias1);
-        Alumno alumno2 = new Alumno("María", "García", LocalDate.of(2003, 10, 20), listaNotas2, listaMaterias2);
+        Alumno alumno1 = new Alumno("Juan", "Pérez", LocalDate.of(2005, 5, 15), "Estado 604", listaNotas1, listaMaterias1);
+        Alumno alumno2 = new Alumno("María", "García", LocalDate.of(2003, 10, 20), "Carabobo 1874", listaNotas2, listaMaterias2);
 
         Materia materia1 = new Materia("Programación Orientada a Objetos", contenidos1, inscriptos1);
         Materia materia2 = new Materia("Base de Datos", contenidos2, inscriptos2);
@@ -110,7 +110,7 @@ public class Materia {
         materia1.listarAlumnos();
 
 
-        Alumno alumnoNuevo = new Alumno("Carlos", "Sánchez", LocalDate.of(2000, 1, 1), listaNotas3, listaMaterias3);
+        Alumno alumnoNuevo = new Alumno("Carlos", "Sánchez", LocalDate.of(2000, 1, 1), "Duhalde 3244", listaNotas3, listaMaterias3);
         System.out.println("Mayor nota (esperado null): " + alumnoNuevo.MayorNota());
         System.out.println("Promedio (esperado 0.0): " + alumnoNuevo.PromedioNota());
 

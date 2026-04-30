@@ -1,7 +1,5 @@
 package ejerciciosArray;
-
 import persona.Persona;
-
 import java.util.ArrayList;
 
 public class Ej3ArrayList {

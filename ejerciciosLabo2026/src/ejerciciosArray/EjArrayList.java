@@ -1,5 +1,4 @@
 package ejerciciosArray;
-
 import java.util.ArrayList;
 
 public class EjArrayList {

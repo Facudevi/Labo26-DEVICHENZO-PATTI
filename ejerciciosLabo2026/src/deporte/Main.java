@@ -8,12 +8,12 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Jugador> listaA = new ArrayList<>();
         for (int i = 1; i <= 11; i++) {
-            listaA.add(new Jugador("Gonza", "Diaz", LocalDate.of(1990, 1, 19), 5));
+            listaA.add(new Jugador("Gonza", "Diaz", LocalDate.of(1990, 1, 19), "Eslabones 3221", 5));
         }
 
         ArrayList<Jugador> listaB = new ArrayList<>();
         for (int i = 1; i <= 11; i++) {
-            listaB.add(new Jugador("Maria", "Perez", LocalDate.of(1995, 5, 9), 7));
+            listaB.add(new Jugador("Maria", "Perez", LocalDate.of(1995, 5, 9), "Miller 4029", 7));
         }
 
         ArrayList<String> horarioA = new ArrayList<>(Arrays.asList("mañana", "noche"));
