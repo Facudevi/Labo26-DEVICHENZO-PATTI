@@ -1,6 +1,6 @@
 package formas;
 
-public class Circulo {
+public class Circulo extends Formas{
     private float radio;
 
     public Circulo(){
@@ -17,12 +17,14 @@ public class Circulo {
         this.radio = radio;
     }
 
+    @Override
     public double obtenerArea(){
         double area;
         area = Math.PI * Math.pow(radio, 2);
         return area;
     }
 
+    @Override
     public double obtenerPerimetro(){
         double perimetro;
         perimetro = 2 * Math.PI * radio;

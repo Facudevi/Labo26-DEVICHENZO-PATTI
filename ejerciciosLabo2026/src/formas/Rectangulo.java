@@ -1,6 +1,6 @@
 package formas;
 
-public class Rectangulo {
+public class Rectangulo extends Formas{
     private double base;
     private double altura;
 
@@ -23,12 +23,14 @@ public class Rectangulo {
         this.altura = altura;
     }
 
+    @Override
     public double obtenerArea(){
         double area;
         area = base * altura;
         return area;
     }
 
+    @Override
     public double obtenerPerimetro(){
         double perimetro;
         perimetro = (base * 2) + (altura * 2);

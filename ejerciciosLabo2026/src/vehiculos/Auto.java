@@ -2,15 +2,15 @@ package vehiculos;
 
 import java.time.LocalDate;
 
-public class Auto extends AutoMotor{
+public class Auto extends Coche{
     private boolean descapotable;
 
-    public Auto(String marca, String modelo, String color, int cantRuedas, LocalDate fechaFabric, String patente, boolean descapotable) {
-        super(marca, modelo, color, cantRuedas, fechaFabric, patente);
+    public Auto(String marca, String modelo, String color, int cantRuedas, LocalDate fechaFabric, double velocidad, String patente, boolean descapotable) {
+        super(marca, modelo, color, cantRuedas, fechaFabric, velocidad, patente);
         this.descapotable = descapotable;
     }
 
-    public boolean isDescapotable() {
+    public boolean getDescapotable() {
         return descapotable;
     }
     public void setDescapotable(boolean descapotable) {

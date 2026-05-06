@@ -4,18 +4,26 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Alumno extends Persona {
+    private String division;
     private ArrayList<Float> listaNotas;
     private ArrayList<Materia> listaMaterias;
 
-    public Alumno(String nombre, String apellido, LocalDate fecha, String direccion, ArrayList<Float> listaNotas, ArrayList<Materia> listaMaterias) {
+    public Alumno(String nombre, String apellido, LocalDate fecha, String direccion, String division, ArrayList<Float> listaNotas, ArrayList<Materia> listaMaterias) {
         super(nombre, apellido, fecha, direccion);
+        this.division = division;
         this.listaNotas = listaNotas;
         this.listaMaterias = listaMaterias;
     }
 
+    public String getDivision() {
+        return division;
+    }
     public ArrayList<Float> getListaNotas() {return listaNotas;}
     public ArrayList<Materia> getListaMaterias() {return listaMaterias;}
 
+    public void setDivision(String division) {
+        this.division = division;
+    }
     public void setListaNotas(ArrayList<Float> listaNotas) {this.listaNotas = listaNotas;}
     public void setListaMaterias(ArrayList<Materia> listaMaterias) {this.listaMaterias = listaMaterias;}
 

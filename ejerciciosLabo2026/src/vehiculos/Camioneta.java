@@ -2,12 +2,12 @@ package vehiculos;
 
 import java.time.LocalDate;
 
-public class Camioneta extends AutoMotor{
+public class Camioneta extends Coche{
     private double capCarga;
     private double cargaActual;
 
-    public Camioneta(String marca, String modelo, String color, int cantRuedas, LocalDate fechaFabric, String patente, double capCarga, double cargaActual) {
-        super(marca, modelo, color, cantRuedas, fechaFabric, patente);
+    public Camioneta(String marca, String modelo, String color, int cantRuedas, LocalDate fechaFabric, double velocidad, String patente, double capCarga, double cargaActual) {
+        super(marca, modelo, color, cantRuedas, fechaFabric, velocidad, patente);
         this.capCarga = capCarga;
         this.cargaActual = cargaActual;
     }
