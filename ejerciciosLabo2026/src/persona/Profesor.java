@@ -16,7 +16,4 @@ public class Profesor extends Persona{
     public void setPorcentajeDesc(double porcentajeDesc) {
         this.porcentajeDesc = porcentajeDesc;
     }
-
-
-
 }
