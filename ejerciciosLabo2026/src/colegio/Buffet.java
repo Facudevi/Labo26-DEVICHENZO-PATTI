@@ -80,7 +80,7 @@ public class Buffet {
                     System.out.println("Nuevo precio");
                     double precio = input.nextDouble();
                     p.setPrecio(precio);
-                    System.out.println("Plato: " + p.getNombre() + "\n Nuevo precio: $" + p.getPrecio());
+                    System.out.println("Plato: " + p.getNombre() + "\nNuevo precio: $" + p.getPrecio());
                     break;
                 default:
                     System.out.println("Opción no válida");
@@ -92,10 +92,11 @@ public class Buffet {
     }
 
     public void listarPlatosCocinar(LocalDate fecha){
-        System.out.println("Platos a cocinar el día: " + fecha);
+        System.out.println("-- PLATOS A COCINAR --");
+        System.out.println("Fecha: " + fecha);
         for (Pedido p : pedido){
             if(p.getFecha().equals(fecha)){
-                System.out.println("Plato a cocinar: " + p.getPlato().getNombre() + " | Precio final: $" + p.calcularPrecioFinal());
+                System.out.println("Plato a cocinar: " + p.getPlato().getNombre() + " | Para: " + p.getPersona().getNombre() + " " + p.getPersona().getApellido() + " | Precio final: $" + p.calcularPrecioFinal());
             }
         }
     }
@@ -112,7 +113,7 @@ public class Buffet {
     }
 
     public void listarPendientes(){
-        System.out.println("Pedidos Pendientes:");
+        System.out.println("-- PEDIDOS PENDIENTES --");
         for (Pedido p : pedido){
             if (!p.getEntregado()){
                 System.out.println(p.getPlato().getNombre() + " | " + p.getPersona().getNombre() + " " + p.getPersona().getApellido());
@@ -138,10 +139,10 @@ public class Buffet {
             }
 
             if (contador[i] > max1){
-                max2 = max1;
-                nomPlato2 = nomPlato1;
                 max3 = max2;
                 nomPlato3 = nomPlato2;
+                max2 = max1;
+                nomPlato2 = nomPlato1;
                 max1 = contador[i];
                 nomPlato1 = pl.getNombre();
             }
@@ -157,11 +158,10 @@ public class Buffet {
             }
         }
 
-        System.out.println("PLATOS MÁS PEDIDOS:");
+        System.out.println("-- PLATOS MÁS PEDIDOS --");
         System.out.println("1- " + nomPlato1 + ": " + max1);
         System.out.println("2- " + nomPlato2 + ": " + max2);
         System.out.println("3- " + nomPlato3 + ": " + max3);
-
     }
 
     public static void main(String[] args) {
@@ -174,7 +174,7 @@ public class Buffet {
         Alumno alumno1 = new Alumno("Juan", "Pérez", LocalDate.of(2010, 5, 15), "Estado 604", "5°A", listaNotas1, listaMaterias1);
         Alumno alumno2 = new Alumno("María", "García", LocalDate.of(2011, 10, 20), "Carabobo 1874", "4°B", listaNotas2, listaMaterias2);
 
-        Profesor profesor1 = new Profesor("Martin", "Barbieri", LocalDate.of(2003, 1, 1), "Miller 1881", 15.5);
+        Profesor profesor1 = new Profesor("Martin", "Barbieri", LocalDate.of(2003, 1, 1), "Libertador 1881", 15.5);
         Profesor profesor2 = new Profesor("Franco", "Callipo", LocalDate.of(2003, 2, 2), "Carabobo 1874", 10);
 
         Plato plato1 = new Plato("Fideos", 6500);
@@ -203,17 +203,25 @@ public class Buffet {
         buffet.pedido.add(pedido6);
         buffet.pedido.add(pedido7);
 
-        System.out.println("-- PRUEBAS DE FUNCIONALIDAD --");
+        System.out.println("\n-- PRUEBAS DE FUNCIONALIDAD --\n");
 
-        Plato plato5 = new Plato("Pizzeta", 3000);
+        Plato plato5 = new Plato("Pizzeta", 3500);
+        System.out.println("-- AGREGAR PLATOS --");
         buffet.agregarPlato(plato1);
         buffet.agregarPlato(plato5);
+        System.out.println("-- MENU DE PLATOS --");
+        for (int i=0; i < buffet.menu.size(); i++){
+            System.out.println((i+1) + "- " + buffet.menu.get(i).getNombre() + " | $" + buffet.menu.get(i).getPrecio());
+        }
 
+        System.out.println("-- ELIMINAR PLATO --");
         buffet.eliminarPlato(plato5);
+        System.out.println("-- MODIFICAR PLATO --");
         buffet.modificarPlato(plato2);
 
         buffet.listarPlatosCocinar(LocalDate.of(2026, 5, 8));
 
+        System.out.println("-- MARCAR COMO ENTREGADO --");
         buffet.marcarEntregado(pedido7);
         buffet.marcarEntregado(pedido1);
         buffet.listarPendientes();
