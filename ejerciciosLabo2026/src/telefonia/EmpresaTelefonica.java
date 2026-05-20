@@ -1,6 +1,7 @@
 package telefonia;
 import persona.Empleado;
 
+import java.sql.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -52,15 +53,62 @@ public class EmpresaTelefonica {
         }
     }
 
+    public boolean coincideEmp(Empleado empleado, Llamada llamada){
+        return ((empleado.getNombre().equals(llamada.getEmpleadoOrigen().getNombre())) && (empleado.getApellido().equals(llamada.getEmpleadoOrigen().getApellido())));
+    }
+
     public void mostrarRegistro(){
         System.out.println("-- REGISTRO DE LLAMADAS --");
-        for (Llamada llamada : registroLlamada){
-            System.out.println("De: " + llamada.getEmpleadoOrigen().getNombre() + " " + llamada.getEmpleadoOrigen().getApellido() +
-                               "\nPara: " + llamada.getEmpleadoDestino().getNombre() + " " + llamada.getEmpleadoDestino().getApellido() +
-                               "\nFecha: " + llamada.getFechaLlamada() +
-                               "\nDuracion: " + llamada.getDuracion() +
-                               "\nCosto: " + llamada.calcularCosto() + "\n -----------");
+        for (Empleado emp : listaEmpleado) {
+            System.out.println("Llamadas de " + emp.getNombre() + " " + emp.getApellido() + ":");
+            for (Llamada ll : registroLlamada) {
+                if (coincideEmp(emp, ll)) {
+                    System.out.println("Para: " + ll.getEmpleadoDestino().getNombre() + " " + ll.getEmpleadoDestino().getApellido() +
+                            "\nFecha: " + ll.getFechaLlamada() +
+                            "\nDuracion: " + ll.getDuracion() +
+                            "\nCosto: " + ll.calcularCosto() + "\n -----------");
+                }
+            }
         }
+    }
+
+    public void sumarTiempo(Empleado empleado){
+
+    }
+
+    public void ranking(){
+        ArrayList<Empleado> listaRanking = new ArrayList<Empleado>();
+        ArrayList<Integer> listaDuracion = new ArrayList<Integer>();
+        int tiempoTotal = 0;
+        for (Empleado emp : listaEmpleado){
+            for (Llamada ll : registroLlamada){
+                if (coincideEmp(emp, ll)){
+                    tiempoTotal += ll.getDuracion();
+                }
+            }
+            listaDuracion.add(tiempoTotal);
+            listaRanking.add(emp);
+        }
+
+        for (int i=0; i < listaDuracion.size() - 1; i++){
+            for (int j=0; j < listaDuracion.size() - i - 1; j++){
+                if (listaDuracion.get(j) > listaDuracion.get(j + 1)){
+                    Empleado aux = listaRanking.get(j);
+                    listaRanking.set(j, listaRanking.get(j+1));
+                    listaRanking.set(j+1, aux);
+
+                    int aux2 = listaDuracion.get(j+1);
+                    listaDuracion.set(j, listaDuracion.get(j+1));
+                    listaDuracion.set(j+1, aux2);
+                }
+            }
+        }
+
+        for (Empleado e : listaRanking){
+            System.out.println("-- RANKING LLAMADA AL EXTERIOR --");
+            System.out.println(e.getNombre() + " " + e.getApellido() + " | " + e.getPais());
+        }
+
     }
 
 
