@@ -6,7 +6,7 @@ public class Local extends Llamada{
     private String provDestino;
     private double costoPorMinuto;
 
-    public Local(Empleado empleadoOrigen, Empleado empleadoDestino, int duracion, String provOrigen, String provDestino, double costoPorMinuto) {
+    public Local(Empleado empleadoOrigen, Empleado empleadoDestino, int duracion, String provOrigen, String provDestino) {
         super(empleadoOrigen, empleadoDestino, duracion);
         this.provOrigen = provOrigen;
         this.provDestino = provDestino;
@@ -27,6 +27,7 @@ public class Local extends Llamada{
         return getDuracion() * costoPorMinuto;
     }
 
+    @Override
     public String obtenerDetalle() {
         return super.obtenerDetalle()
                 + " | Provincia origen: " + provOrigen

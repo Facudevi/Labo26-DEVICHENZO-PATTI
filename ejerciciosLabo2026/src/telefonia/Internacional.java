@@ -7,7 +7,7 @@ public class Internacional extends Llamada {
     private double costoPorMinuto;
     private double cargoInternacional;
 
-    public Internacional(Empleado empleadoOrigen, Empleado empleadoDestino, int duracion, String codigoPaisDestino, String franjaHoraria, double costoPorMinuto, double cargoInternacional) {
+    public Internacional(Empleado empleadoOrigen, Empleado empleadoDestino, int duracion, String codigoPaisDestino, String franjaHoraria) {
         super(empleadoOrigen, empleadoDestino, duracion);
         this.codPaisDestino = codigoPaisDestino;
         this.franjaHoraria = franjaHoraria;
@@ -30,16 +30,20 @@ public class Internacional extends Llamada {
         return cargoInternacional + getDuracion() * costoPorMinuto;
     }
 
+    @Override
     public boolean esInternacional() {
         return true;
     }
 
+    @Override
     public String obtenerDetalle() {
         return super.obtenerDetalle()
                 + " | Codigo pais destino: " + codPaisDestino
                 + " | Franja horaria destino: " + franjaHoraria
                 + " | Llamada internacional ";
     }
+
+    @Override
     public int obtenerMinutosAlExteriorDe(Empleado empleado) {
         if (fueRealizadaPor(empleado)) {
             return getDuracion();

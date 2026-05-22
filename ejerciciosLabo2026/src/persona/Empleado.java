@@ -44,7 +44,7 @@ public class Empleado extends Persona{
     }
 
     public boolean tieneMismoDniQue(int dni) {
-        return this.dni.equals(dni);
+        return this.getDNI()==(dni);
     }
 
     public boolean viveEnElMismoPaisQue(Empleado otroEmpleado) {

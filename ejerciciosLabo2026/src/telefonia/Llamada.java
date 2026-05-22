@@ -38,7 +38,7 @@ public class Llamada {
     }
 
     public String obtenerDetalle() {
-        return " | Origen: " + empleadoOrigen.getNombreCompleto()
+        return " Origen: " + empleadoOrigen.getNombreCompleto()
                 + " | Destino: " + empleadoDestino.getNombreCompleto()
                 + " | Fecha: " + fechaLlamada
                 + " | Duracion: " + duracion + " minutos"
