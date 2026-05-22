@@ -34,6 +34,10 @@ public class Persona {
         return LocalDate.now().getYear() - this.getFecha().getYear();
     }
 
+    public String getNombreCompleto() {
+        return nombre + " " + apellido;
+    }
+
     public static void main(String[] args){
         Persona persona1 = new Persona("Camila", "Estevez", LocalDate.of(1999, 2, 27), "Superi 2001");
         persona1.imprimirDatos();
