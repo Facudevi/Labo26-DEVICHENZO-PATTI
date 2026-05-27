@@ -3,36 +3,34 @@ package alarmas;
 import java.util.ArrayList;
 
 public class Sensor_Complejo extends Sensor{
-    private ArrayList<SensorIndividual> sensor_grupo;
+    private ArrayList<SensorIndividual> listaSensores;
 
-    public Sensor_Complejo(double umbral, ArrayList<SensorIndividual> sensor_grupo) {
+    public Sensor_Complejo(double umbral) {
         super(umbral);
-        this.sensor_grupo = sensor_grupo;
+        this.listaSensores = new ArrayList<>();
+    }
+
+    public void agregar(SensorIndividual s) { listaSensores.add(s); }
+
+    @Override
+    public double getMedida() {
+        double suma = 0;
+        int cont = 0;
+        for (Sensor s : listaSensores) {
+            if (s.isConectado()) {
+                suma = suma + s.getMedida();
+                cont = cont + 1;
+            }
+        }
+        if (cont == 0) return 0;
+        return suma / cont;
     }
 
     @Override
     public void dispararAlarma(){
-        double real = 0, umbral = 0, promUmbral, promReal;
-        int cant = 0;
-
-        for (SensorIndividual sen : sensor_grupo){
-            umbral += sen.getUmbral();
-            real += sen.getReal();
-            cant ++;
-        }
-
-        promReal = real/cant;
-        promUmbral = umbral/cant;
-
-        for (SensorIndividual sen : sensor_grupo) {
-            if (sen.isEstado() && promReal > promUmbral){
-                sen.imprimirAlarma();
-            }
-        }
+        imprimirAlarma();
     }
 
     @Override
-    public void imprimirAlarma(){
-        System.out.println("Alarma activada para el grupo");
-    }
+    public void imprimirAlarma() { System.out.println("Alerta: El promedio superó el umbral."); }
 }

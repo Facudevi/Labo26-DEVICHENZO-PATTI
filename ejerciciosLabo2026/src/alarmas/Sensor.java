@@ -8,6 +8,8 @@ public class Sensor {
     public double getUmbral() { return umbral; }
     public void setUmbral(double umbral) { this.umbral = umbral; }
 
+    public double getMedida(){ return  0; }
+    public boolean isConectado(){ return true; }
     public void dispararAlarma(){}
     public void imprimirAlarma(){}
 }

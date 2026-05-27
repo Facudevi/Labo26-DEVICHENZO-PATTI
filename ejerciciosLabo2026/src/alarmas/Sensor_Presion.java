@@ -4,9 +4,12 @@ import java.time.LocalDate;
 
 public class Sensor_Presion extends SensorIndividual {
 
-    public Sensor_Presion(boolean estado, double medida, double umbral, LocalDate anio) {
-        super(100, estado, medida, anio);
+    public Sensor_Presion(double umbral, boolean estado, LocalDate anio) {
+        super(umbral, estado, anio);
     }
+
+    @Override
+    public double getMedida(){ return 130; }
 
     @Override
     public void dispararAlarma(){

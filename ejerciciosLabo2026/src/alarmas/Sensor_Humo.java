@@ -2,11 +2,14 @@ package alarmas;
 
 import java.time.LocalDate;
 
-public class Detector_Humo extends SensorIndividual {
+public class Sensor_Humo extends SensorIndividual {
 
-    public Detector_Humo(boolean estado, double medida, LocalDate anio) {
-        super(80, estado, medida, anio);
+    public Sensor_Humo(double umbral, boolean estado, LocalDate anio) {
+        super(umbral, estado, anio);
     }
+
+    @Override
+    public double getMedida(){ return 50; }
 
     @Override
     public void dispararAlarma(){

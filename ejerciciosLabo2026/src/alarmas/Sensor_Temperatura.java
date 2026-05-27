@@ -4,9 +4,12 @@ import java.time.LocalDate;
 
 public class Sensor_Temperatura extends SensorIndividual {
 
-    public Sensor_Temperatura(boolean estado, double medida, double umbral, LocalDate anio) {
-        super(25, estado, medida, anio);
+    public Sensor_Temperatura(double umbral, boolean estado, LocalDate anio) {
+        super(umbral, estado, anio);
     }
+
+    @Override
+    public double getMedida(){ return 35; }
 
     @Override
     public void dispararAlarma(){
