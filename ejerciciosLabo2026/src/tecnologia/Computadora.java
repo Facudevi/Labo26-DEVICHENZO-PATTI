@@ -3,6 +3,24 @@ package tecnologia;
 import java.util.ArrayList;
 
 public class Computadora {
+    private CPU cpu;
+    private ArrayList<Periferico> listadispositivos;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
     private ArrayList<Componente> listaComponentes;
 
     public Computadora() {
@@ -28,7 +46,6 @@ public class Computadora {
             if (c.esEntrada()) entrada++;
             if (c.esSalida()) salida++;
         }
-
         return ((cpu > 1) && (entrada > 1) && (salida > 1));
     }
 
@@ -39,4 +56,9 @@ public class Computadora {
         }
         return suma;
     }
+
+     */
+
+
+
 }

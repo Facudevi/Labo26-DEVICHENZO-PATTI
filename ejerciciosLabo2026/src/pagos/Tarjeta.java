@@ -12,12 +12,8 @@ public class Tarjeta extends Metodo_Pago{
     }
 
     @Override
-    public double calcularTotal(double subtotal) {
-        return subtotal * 1.05;
-    }
+    public double calcularTotal(double subtotal) { return subtotal + getMontoRecargo(subtotal); }
 
     @Override
-    public double getMontoRecargo(double subtotal) {
-        return subtotal * 0.05;
-    }
+    public double getMontoRecargo(double subtotal) { return subtotal * 0.05; }
 }
