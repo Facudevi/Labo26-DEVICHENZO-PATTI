@@ -6,6 +6,7 @@ import tecnologia.Computadora;
 import java.util.ArrayList;
 
 public class Web_Computadoras {
+    /*
     private Cliente cliente;
     private Metodo_Pago pago;
     private ArrayList<Computadora> listaComputadoras;
@@ -30,4 +31,6 @@ public class Web_Computadoras {
             listaComputadoras.add(pc);
         }
     }
+
+ */
 }

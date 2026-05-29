@@ -1,4 +1,5 @@
 package deporte;
+import fecha.Turno;
 import persona.Jugador;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,8 +17,8 @@ public class Main {
             listaB.add(new Jugador("Maria", "Perez", LocalDate.of(1995, 5, 9), "Miller 4029", 7));
         }
 
-        ArrayList<String> horarioA = new ArrayList<>(Arrays.asList("mañana", "noche"));
-        ArrayList<String> horarioB = new ArrayList<>(Arrays.asList("tarde", "noche"));
+        ArrayList<Turno> horarioA = new ArrayList<>(Arrays.asList(Turno.MAÑANA, Turno.NOCHE));
+        ArrayList<Turno> horarioB = new ArrayList<>(Arrays.asList(Turno.TARDE, Turno.NOCHE));
 
         Equipo equipoA = new Equipo(listaA.get(0), horarioA, listaA);
         Equipo equipoB = new Equipo(listaB.get(0), horarioB, listaB);

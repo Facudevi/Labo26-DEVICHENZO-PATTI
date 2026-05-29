@@ -1,13 +1,15 @@
 package deporte;
+import fecha.Turno;
+import libreria.Editorial;
 import persona.Jugador;
 import java.util.ArrayList;
 
 public class Equipo {
     private ArrayList <Jugador> jugadores;
-    private ArrayList<String> horariosJuego;
+    private ArrayList<Turno> horariosJuego;
     private Jugador capitan;
 
-    public Equipo(Jugador capitan, ArrayList<String> horarioJuego, ArrayList<Jugador> jugadores) {
+    public Equipo(Jugador capitan, ArrayList<Turno> horarioJuego, ArrayList<Jugador> jugadores) {
         int coincide = 0;
         for (Jugador p: jugadores) {
             if(this.estaEnUso(p.getnCamiseta(),p,jugadores)){
@@ -26,12 +28,11 @@ public class Equipo {
         return jugadores;
     }
 
-
-    public ArrayList<String> getHorarioJuego() {
+    public ArrayList<Turno> getHorarioJuego() {
         return horariosJuego;
     }
 
-    public void setHorarioJuego(ArrayList<String> horarioJuego) {
+    public void setHorarioJuego(ArrayList<Turno> horarioJuego) {
         this.horariosJuego = horarioJuego;
     }
 
@@ -55,17 +56,17 @@ public class Equipo {
         }
         return  coincide;
     }
-    public boolean hasHorarioJuego(String horario){
+    public boolean hasHorarioJuego(Turno horario){
         return  this.horariosJuego.contains(horario);
     }
 
-    private boolean esHorarioValido(ArrayList<String> horarios){
-        ArrayList<String> Disphorarios = new ArrayList<>();
-        Disphorarios.add("mañana");
-        Disphorarios.add("tarde");
-        Disphorarios.add("noche");
-        for(String hora:horarios){
-            if(!(Disphorarios.contains(hora.toLowerCase()))){
+    private boolean esHorarioValido(ArrayList<Turno> horarios){
+        ArrayList<Turno> Disphorarios = new ArrayList<>();
+        Disphorarios.add(Turno.MAÑANA);
+        Disphorarios.add(Turno.TARDE);
+        Disphorarios.add(Turno.NOCHE);
+        for(Turno hora : horarios){
+            if(!(Disphorarios.contains(hora))){
                 return  false;
             }
         }

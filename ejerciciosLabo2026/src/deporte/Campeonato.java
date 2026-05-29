@@ -1,4 +1,6 @@
 package deporte;
+import fecha.Turno;
+
 import java.util.ArrayList;
 
 public class Campeonato {
@@ -10,20 +12,21 @@ public class Campeonato {
         this.listaPartidos = new ArrayList<>();
         this.listaEquipos = new ArrayList<>();
     }
-    private String encontrarMatchHorarios(Equipo equipo1, Equipo equipo2){
-        ArrayList<String> horariosE1 = equipo1.getHorarioJuego();
-        ArrayList<String> horariosE2 = equipo2.getHorarioJuego();
-        if(horariosE1.contains("mañana") && horariosE2.contains("mañana")){
-            return  "mañana";
+    private Turno encontrarMatchHorarios(Equipo equipo1, Equipo equipo2){
+        ArrayList<Turno> horariosE1 = equipo1.getHorarioJuego();
+        ArrayList<Turno> horariosE2 = equipo2.getHorarioJuego();
+        if(horariosE1.contains(Turno.MAÑANA) && horariosE2.contains(Turno.MAÑANA)){
+            return Turno.MAÑANA;
         }
-        else if(horariosE1.contains("tarde") && horariosE2.contains("tarde")){
-            return  "tarde";
+        else if(horariosE1.contains(Turno.TARDE) && horariosE2.contains(Turno.TARDE)){
+            return Turno.TARDE;
         }
-        else if(horariosE1.contains("noche") && horariosE2.contains("noche")){
-            return  "noche";
+        else if(horariosE1.contains(Turno.NOCHE) && horariosE2.contains(Turno.NOCHE)){
+            return Turno.NOCHE;
         }
-        else {return  "NOT_FOUND";}
-
+        else {
+            return null;
+        }
     }
 
     private int esPartidoValido(Equipo equipo1, Equipo equipo2, int fechaPartido){
@@ -50,7 +53,7 @@ public class Campeonato {
                 return  4;
             }
         }
-        if(this.encontrarMatchHorarios(equipo1,equipo2).equals("NOT_FOUND")){
+        if(this.encontrarMatchHorarios(equipo1,equipo2).equals(null)){
             return  5;
         }
         return 0;
@@ -71,7 +74,7 @@ public class Campeonato {
                 return "no hay horarios en comun";
         }
 
-        String matchingFecha = this.encontrarMatchHorarios(equipo1,equipo2);
+        Turno matchingFecha = this.encontrarMatchHorarios(equipo1,equipo2);
         Partido partido = new Partido(equipo1,equipo2,fecha,matchingFecha);
         this.listaPartidos.add(partido);
         return  "exito";

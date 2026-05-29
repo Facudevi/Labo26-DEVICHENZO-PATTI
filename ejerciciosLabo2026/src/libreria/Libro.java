@@ -1,4 +1,4 @@
-package objetos;
+package libreria;
 import fecha.Fecha;
 import persona.Persona;
 
@@ -9,27 +9,32 @@ public class Libro {
     private Persona autor;
     private String isbn;
     private  int cantidadHojas;
+    private Editorial editorial;
     private Fecha fechaPublicacion;
 
-    public  Libro(String nombre, Persona autor, String isbn, int cantidadHojas, Fecha fechaPublicacion){
+    public Libro(String nombre, Persona autor, String isbn, int cantidadHojas, Editorial editorial, Fecha fechaPublicacion) {
         this.nombre = nombre;
         this.autor = autor;
         this.isbn = isbn;
         this.cantidadHojas = cantidadHojas;
+        this.editorial = editorial;
         this.fechaPublicacion = fechaPublicacion;
     }
-    public  Libro(Persona autor, String isbn, int cantidadHojas, Fecha fechaPublicacion){
+
+    public  Libro(Persona autor, String isbn, int cantidadHojas, Editorial editorial, Fecha fechaPublicacion){
         this.nombre = "las aventuras de pepe";
         this.autor = autor;
         this.isbn = isbn;
         this.cantidadHojas = cantidadHojas;
+        this.editorial = Editorial.KAPELUSZ;
         this.fechaPublicacion = fechaPublicacion;
     }
-    public  Libro(String isbn,int cantidadHojas,Fecha fechaPublicacion){
+    public  Libro(String isbn,int cantidadHojas, Editorial editorial, Fecha fechaPublicacion){
         this.nombre = "las aventuras de pepe";
         this.autor = new Persona("pepe","sanchez", LocalDate.of(1998, 4, 19),"Bolivia 3555");
         this.isbn = isbn;
         this.cantidadHojas = cantidadHojas;
+        this.editorial = editorial;
         this.fechaPublicacion = fechaPublicacion;
     }
 
@@ -45,6 +50,7 @@ public class Libro {
     public int getCantidadHojas() {
         return cantidadHojas;
     }
+    public Editorial getEditorial() { return editorial; }
     public Fecha getFechaPublicacion() {
         return fechaPublicacion;
     }
@@ -61,6 +67,7 @@ public class Libro {
     public void setCantidadHojas(int cantidadHojas) {
         this.cantidadHojas = cantidadHojas;
     }
+    public void setEditorial(Editorial editorial) { this.editorial = editorial; }
     public void setFechaPublicacion(Fecha fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
@@ -69,8 +76,17 @@ public class Libro {
         return  this.fechaPublicacion.menorQue(libro.fechaPublicacion);
     }
 
+    public void mostrarEditoriales(){
+        Editorial[] todas = Editorial.values();
+        for (Editorial edi : todas){
+            System.out.println(edi);
+        }
+    }
+
     public  static  void main(String[] args){
-        Libro libro = new Libro("jf",30,new Fecha());
+        Libro libro = new Libro("0001278432021",30, Editorial.ALIANZA, new Fecha());
         System.out.println(libro.getCantidadHojas());
+
+        libro.mostrarEditoriales();
     }
 }
