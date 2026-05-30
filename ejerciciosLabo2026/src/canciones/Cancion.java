@@ -1,5 +1,5 @@
 package canciones;
-import persona.Persona;
+import seres_vivos.Persona;
 
 import java.time.LocalDate;
 

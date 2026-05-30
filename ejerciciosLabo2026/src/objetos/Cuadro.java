@@ -1,5 +1,5 @@
 package objetos;
-import persona.Restaurador;
+import seres_vivos.Restaurador;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

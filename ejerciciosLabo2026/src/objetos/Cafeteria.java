@@ -22,10 +22,10 @@ public class Cafeteria {
             this.cantidadMaximaCafe = cantidadMaximaCafe;
         }
     }
-    public void   llenarCaferetera(){
+    public void llenarCafetera(){
         this.cantidadActualCafe =this.cantidadMaximaCafe;
     }
-    public  void  servirTaza(double capacidad){
+    public void servirTaza(double capacidad){
         if(this.cantidadActualCafe < capacidad){
             this.cantidadActualCafe = 0;
         }
@@ -34,11 +34,11 @@ public class Cafeteria {
         }
     }
 
-    public  void  vaciarCafetera(){
+    public void vaciarCafetera(){
         this.cantidadActualCafe = 0;
     }
 
-    public  void  agregarCafe(double catidad){
+    public void agregarCafe(double catidad){
         if(catidad > cantidadMaximaCafe){
             this.cantidadActualCafe = this.cantidadMaximaCafe;
         }
