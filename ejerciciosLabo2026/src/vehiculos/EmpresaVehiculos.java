@@ -13,11 +13,11 @@ public class EmpresaVehiculos {
     }
 
     public boolean agregarVehiculo(Vehiculo v){
-        if (v instanceof Coche){
-            Coche nuevoAM = (Coche) v;
+        if (v instanceof Vehiculo_Patentado){
+            Vehiculo_Patentado nuevoAM = (Vehiculo_Patentado) v;
             for (Vehiculo vehiculo : flota){
-                if (vehiculo instanceof Coche){
-                    Coche existenteAM = (Coche) vehiculo;
+                if (vehiculo instanceof Vehiculo_Patentado){
+                    Vehiculo_Patentado existenteAM = (Vehiculo_Patentado) vehiculo;
                     if (existenteAM.getPatente().equals(nuevoAM.getPatente())){
                         System.out.println("Error, la patente ya está registrada");
                         return false;
@@ -35,7 +35,7 @@ public class EmpresaVehiculos {
         int cantBicicletas = 0;
 
         for (Vehiculo v : flota){
-            if (v instanceof Auto){
+            if (v instanceof Coche){
                 cantAutos ++;
             }
             else if (v instanceof Camioneta){
@@ -84,9 +84,9 @@ public class EmpresaVehiculos {
         double resultado;
 
         for (Vehiculo v : flota) {
-            if (v instanceof Auto){
+            if (v instanceof Coche){
                 totalAutos ++;
-                Auto nuevoA = (Auto) v;
+                Coche nuevoA = (Coche) v;
                 if (nuevoA.getDescapotable()){
                     descapotables ++;
                 }
@@ -106,9 +106,9 @@ public class EmpresaVehiculos {
 
 
     public static void main(String[] args){
-        Auto auto1 = new Auto("Toyota", "Corolla", "Blanco", 4, LocalDate.of(2020, 6, 19), 107.8, "ABC123", false);
-        Auto auto2 = new Auto("BMW", "Serie 3", "Negro", 4, LocalDate.of(2024, 4, 2), 100.5, "XYZ999", true);
-        Auto auto3 = new Auto("Mazda", "MX5", "Rojo", 4, LocalDate.of(2025, 10, 10), 113.2, "DEF456", true);
+        Coche auto1 = new Coche("Toyota", "Corolla", "Blanco", 4, LocalDate.of(2020, 6, 19), 107.8, "ABC123", false);
+        Coche auto2 = new Coche("BMW", "Serie 3", "Negro", 4, LocalDate.of(2024, 4, 2), 100.5, "XYZ999", true);
+        Coche auto3 = new Coche("Mazda", "MX5", "Rojo", 4, LocalDate.of(2025, 10, 10), 113.2, "DEF456", true);
 
         Camioneta camioneta1 = new Camioneta("Ford", "Ranger", "Azul", 4, LocalDate.of(2025, 10, 10), 90.4, "JKL321", 1000, 300);
         Camioneta camioneta2 = new Camioneta("Chevrolet", "S10", "Blanco", 4, LocalDate.of(2025, 9, 15), 99.5, "MNO678", 800, 450);
@@ -127,7 +127,7 @@ public class EmpresaVehiculos {
 
 
         System.out.println("-- Agregar patente existente --");
-        empresa.agregarVehiculo(new Auto("Nissan", "Kicks", "Gris", 4, LocalDate.of(2022, 12, 7), 115.8, "ABC123", false));
+        empresa.agregarVehiculo(new Coche("Nissan", "Kicks", "Gris", 4, LocalDate.of(2022, 12, 7), 115.8, "ABC123", false));
 
         System.out.println("-- Tipo con mas cantidad --");
         empresa.masCantidad();

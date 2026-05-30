@@ -1,41 +1,25 @@
 package vehiculos;
 import java.time.LocalDate;
 
-public class Coche extends Vehiculo{
-    private double velocidad;
-    private String patente;
+public class Coche extends Vehiculo_Patentado{
+    private boolean descapotable;
 
-    public Coche(String marca, String modelo, String color, int cantRuedas, LocalDate fechaFabric, double velocidad, String patente) {
-        super(marca, modelo, color, cantRuedas, fechaFabric);
-        this.velocidad = velocidad;
-        this.patente = patente;
+    public Coche(String marca, String modelo, String color, int cantRuedas, LocalDate fechaFabric, double velocidad, String patente, boolean descapotable) {
+        super(marca, modelo, color, cantRuedas, fechaFabric, velocidad, patente);
+        this.descapotable = descapotable;
     }
 
-    public double getVelocidad() {
-        return velocidad;
+    public boolean getDescapotable() {
+        return descapotable;
     }
-    public String getPatente() {
-        return patente;
-    }
-
-    public void setVelocidad(double velocidad) {
-        this.velocidad = velocidad;
-    }
-    public void setPatente(String patente) {
-        this.patente = patente;
+    public void setDescapotable(boolean descapotable) {
+        this.descapotable = descapotable;
     }
 
-    public  void  acelerar (double incremento){
-        this.velocidad += incremento;
-    }
-
-    public void  frenar(){
-        this.velocidad = 0;
-    }
-
-    public void mostrarD(){
-        super.mostrarDatos();
-        System.out.println("Velocidad: " + velocidad);
-        System.out.println("Patente: " + patente);;
+    public void verAuto(){
+        System.out.println("--Auto--");
+        super.mostrarD();
+        if (descapotable){ System.out.println("Descapotable: SI"); }
+        else { System.out.println("Descapotable: NO"); }
     }
 }

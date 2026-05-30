@@ -2,7 +2,7 @@ package vehiculos;
 
 import java.time.LocalDate;
 
-public class Camioneta extends Coche{
+public class Camioneta extends Vehiculo_Patentado{
     private double capCarga;
     private double cargaActual;
 
