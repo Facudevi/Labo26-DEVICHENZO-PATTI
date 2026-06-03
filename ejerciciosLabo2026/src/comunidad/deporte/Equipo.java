@@ -11,7 +11,7 @@ public class Equipo {
     public Equipo(Jugador capitan, ArrayList<Turno> horarioJuego, ArrayList<Jugador> jugadores) {
         int coincide = 0;
         for (Jugador p: jugadores) {
-            if(this.estaEnUso(p.getnCamiseta(),p,jugadores)){
+            if(this.estaEnUso(p.getnCamiseta(), p, jugadores)){
                 coincide+=1;
             }
         }
@@ -26,17 +26,15 @@ public class Equipo {
     public ArrayList<Jugador> getJugadores() {
         return jugadores;
     }
-
     public ArrayList<Turno> getHorarioJuego() {
         return horariosJuego;
+    }
+    public Jugador getCapitan() {
+        return capitan;
     }
 
     public void setHorarioJuego(ArrayList<Turno> horarioJuego) {
         this.horariosJuego = horarioJuego;
-    }
-
-    public Jugador getCapitan() {
-        return capitan;
     }
 
     public void setCapitan(Jugador capitan) {
@@ -45,16 +43,17 @@ public class Equipo {
         }
     }
 
-    public  boolean estaEnUso(int numCamisa, Jugador ignorando, ArrayList<Jugador> jugadores){
+    public  boolean estaEnUso(int numCamisa, Jugador jugador, ArrayList<Jugador> jugadores){
         boolean coincide = false;
         for(Jugador p: jugadores) {
             coincide = p.getnCamiseta() == numCamisa;
-            if(coincide && !p.equals(ignorando)){
+            if(coincide && !p.equals(jugador)){
                 return coincide;
             }
         }
         return  coincide;
     }
+
     public boolean hasHorarioJuego(Turno horario){
         return  this.horariosJuego.contains(horario);
     }

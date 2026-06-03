@@ -3,14 +3,20 @@ import objetos.Cuadro;
 import java.time.LocalDate;
 
 public class Restaurador extends Persona {
-    private long dni;
+    private int dni;
     private int experiencia;
 
-    public Restaurador(String nombre, String apellido, LocalDate fecha, String direccion, long dni, int experiencia) {
+    public Restaurador(String nombre, String apellido, LocalDate fecha, String direccion, int dni, int experiencia) {
         super(nombre, apellido, fecha, direccion);
         this.dni = dni;
         this.experiencia = experiencia;
     }
+
+    public int getDni() { return dni; }
+    public int getExperiencia() { return experiencia; }
+
+    public void setDni(int dni) { this.dni = dni; }
+    public void setExperiencia(int experiencia) { this.experiencia = experiencia; }
 
     public String restaurar(Cuadro obra){
         int estadoInicial = obra.getEstado();
