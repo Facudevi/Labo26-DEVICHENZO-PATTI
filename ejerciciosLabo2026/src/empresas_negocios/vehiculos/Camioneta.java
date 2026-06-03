@@ -8,7 +8,7 @@ public class Camioneta extends Vehiculo_Patentado{
     private double capCarga;
     private double cargaActual;
 
-    public Camioneta(String marca, String modelo, Color color, int cantRuedas, LocalDate fechaFabric, double velocidad, String patente, double capCarga, double cargaActual) {
+    public Camioneta(Marca marca, String modelo, Color color, int cantRuedas, LocalDate fechaFabric, double velocidad, String patente, double capCarga, double cargaActual) {
         super(marca, modelo, color, cantRuedas, fechaFabric, velocidad, patente);
         this.capCarga = capCarga;
         this.cargaActual = cargaActual;

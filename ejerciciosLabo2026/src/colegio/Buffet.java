@@ -1,4 +1,4 @@
-package comunidad.colegio;
+package colegio;
 import comida.Pedido;
 import comida.Plato;
 import seres_vivos.Alumno;

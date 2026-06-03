@@ -7,7 +7,7 @@ public class Vehiculo_Patentado extends Vehiculo{
     private double velocidad;
     private String patente;
 
-    public Vehiculo_Patentado(String marca, String modelo, Color color, int cantRuedas, LocalDate fechaFabric, double velocidad, String patente) {
+    public Vehiculo_Patentado(Marca marca, String modelo, Color color, int cantRuedas, LocalDate fechaFabric, double velocidad, String patente) {
         super(marca, modelo, color, cantRuedas, fechaFabric);
         this.velocidad = velocidad;
         this.patente = patente;

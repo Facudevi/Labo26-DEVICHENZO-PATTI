@@ -4,13 +4,13 @@ import colores.Color;
 import java.time.LocalDate;
 
 public class Vehiculo {
-    private  String marca;
+    private  Marca marca;
     private  String modelo;
     private Color color;
     private int cantRuedas;
     private LocalDate fechaFabric;
 
-    public Vehiculo(String marca, String modelo, Color color, int cantRuedas, LocalDate fechaFabric) {
+    public Vehiculo(Marca marca, String modelo, Color color, int cantRuedas, LocalDate fechaFabric) {
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
@@ -18,7 +18,7 @@ public class Vehiculo {
         this.fechaFabric = fechaFabric;
     }
 
-    public String getMarca() {
+    public Marca getMarca() {
         return marca;
     }
     public String getModelo() {
@@ -34,7 +34,7 @@ public class Vehiculo {
         return fechaFabric;
     }
 
-    public void setMarca(String marca) {
+    public void setMarca(Marca marca) {
         this.marca = marca;
     }
     public void setModelo(String modelo) {

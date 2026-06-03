@@ -1,5 +1,5 @@
 package seres_vivos;
-import comunidad.colegio.Materia;
+import colegio.Materia;
 import java.time.LocalDate;
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package comunidad.deporte;
+package deporte;
 import fecha.Turno;
 import seres_vivos.Jugador;
 import java.util.ArrayList;

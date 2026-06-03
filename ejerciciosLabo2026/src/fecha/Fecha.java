@@ -8,12 +8,13 @@ public class Fecha {
     private  int dia;
     private  int mes;
     private  int anio;
-    private ArrayList<String> meses = new ArrayList<>(Arrays.asList(
-            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+    private ArrayList<Mes> meses = new ArrayList<>(Arrays.asList(
+            Mes.ENERO, Mes.FEBRERO, Mes.MARZO, Mes.ABRIL, Mes.MAYO, Mes.JUNIO,
+            Mes.JULIO, Mes.AGOSTO, Mes.SEPTIEMBRE, Mes.OCTUBRE, Mes.NOVIEMBRE, Mes.DICIEMBRE
     ));
-    private ArrayList<String> dias = new ArrayList<>(Arrays.asList(
-            "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado","Domingo"
+    private ArrayList<Dia> dias = new ArrayList<>(Arrays.asList(
+            Dia.LUNES, Dia.MARTES, Dia.MIERCOLES, Dia.JUEVES,
+            Dia.VIERNES, Dia.SABADO, Dia.DOMINGO
     ));
 
     public int getAnio() {
@@ -36,16 +37,15 @@ public class Fecha {
     }
     public Fecha(int dia,int mes,int anio){
         this.dia = dia;
-        this.mes =mes;
+        this.mes = mes;
         this.anio = anio;
         this.validar(anio,mes,dia);
     }
     private void validar(int anio ,int mes,int dia){
-
         try {
             LocalDate.of(anio, mes, dia);
 
-        } catch ( java.time.DateTimeException e) {
+        } catch (java.time.DateTimeException e) {
             this.dia = 1;
             this.mes = 1;
             this.anio = 1900;
@@ -54,6 +54,7 @@ public class Fecha {
     public  int diaMes(){
         return YearMonth.of(this.anio, this.mes).lengthOfMonth();
     }
+
     public  void  siguiente(){
         LocalDate fechaOriginal = LocalDate.of(this.anio, this.mes, this.dia);
         LocalDate aux = fechaOriginal.plusDays(1);
@@ -61,6 +62,7 @@ public class Fecha {
         this.mes = aux.getMonthValue();
         this.anio = aux.getYear();
     }
+
     public  void  anterior(){
         LocalDate fechaOriginal = LocalDate.of(this.anio, this.mes, this.dia);
         LocalDate aux = fechaOriginal.minusDays(1);
@@ -84,7 +86,4 @@ public class Fecha {
     public  boolean mayorQue(Fecha fechaComp){
         return !(this.dia > fechaComp.getDia() && this.mes > fechaComp.getMes() && this.anio > fechaComp.getAnio());
     }
-
-
-
 }

@@ -1,4 +1,4 @@
-package comunidad.colegio;
+package colegio;
 import seres_vivos.Alumno;
 
 import java.time.LocalDate;
