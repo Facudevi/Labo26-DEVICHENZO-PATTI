@@ -1,4 +1,4 @@
-package tecnologia;
+package tecnologia.componentes;
 
 public class Componente {
     private String nombreFabricante;

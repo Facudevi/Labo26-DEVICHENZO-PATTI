@@ -1,4 +1,4 @@
-package tecnologia;
+package tecnologia.componentes.periferico.entrada;
 
 public class Mouse extends Dispositivo_Entrada{
     public Mouse(String nombreFabricante, String modelo, double precioVenta, int stock, int puertosValidos, String tipoConector) {

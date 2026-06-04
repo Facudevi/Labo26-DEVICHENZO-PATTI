@@ -1,45 +1,35 @@
 package canciones;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 
 public class CD {
     private ArrayList<Cancion> cancion;
 
-    public CD(ArrayList<Cancion> cancion){
-        this.cancion = cancion;
-    }
+    public CD(){ this.cancion = new ArrayList<>(); }
 
-    public ArrayList<Cancion> getCancion(){
-        return cancion;
-    }
-    public void setCancion(ArrayList<Cancion> cancion){
-        this.cancion = cancion;
-    }
+    public ArrayList<Cancion> getCancion(){ return cancion; }
+    public void setCancion(ArrayList<Cancion> cancion){ this.cancion = cancion; }
 
     public int numeroCanciones(){
         int contador = 0;
         for (Cancion song : cancion){
             contador ++;
         }
-
         return contador;
     }
 
-    public Cancion verCancion(int posicion){
-        return cancion.get(posicion);
-    }
+    public String verCancion(int posicion){ return cancion.get(posicion).getTitulo(); }
 
     public void grabaCancion(int posicion, Cancion nuevaCancion){
-            cancion.add(posicion, nuevaCancion);
+        elimina(posicion);
+        cancion.add(posicion, nuevaCancion);
     }
 
-    public void agrega (Cancion cancion){
-        this.cancion.add(cancion);
-    }
+    public void agrega (Cancion cancion){ this.cancion.add(cancion); }
 
-    public void elimina (int posicion){
-        cancion.remove(posicion);
-    }
+    public void elimina (int posicion){ cancion.remove(posicion); }
 
     public void listarCanciones(){
         for (Cancion c : cancion){

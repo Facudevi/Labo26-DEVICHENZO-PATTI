@@ -1,19 +1,12 @@
 package tecnologia;
+import tecnologia.componentes.hardware.CPU;
+import tecnologia.componentes.periferico.Periferico;
 
 import java.util.ArrayList;
 
 public class Computadora {
     private CPU cpu;
     private ArrayList<Periferico> listadispositivos;
-
-
-
-
-
-
-
-
-
 
 
 
@@ -58,7 +51,6 @@ public class Computadora {
     }
 
      */
-
 
 
 }

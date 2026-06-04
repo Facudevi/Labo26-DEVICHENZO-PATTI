@@ -1,6 +1,7 @@
-package tecnologia;
+package tecnologia.componentes.periferico;
+import tecnologia.componentes.Componente;
 
-public class Periferico extends Componente{
+public class Periferico extends Componente {
     private int puertosValidos;
 
     public Periferico(String nombreFabricante, String modelo, double precioVenta, int stock, int puertosValidos) {

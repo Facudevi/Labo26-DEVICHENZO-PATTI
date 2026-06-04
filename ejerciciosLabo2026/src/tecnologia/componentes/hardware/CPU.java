@@ -1,4 +1,6 @@
-package tecnologia;
+package tecnologia.componentes.hardware;
+
+import tecnologia.componentes.Componente;
 
 public class CPU extends Componente {
     public CPU(String nombreFabricante, String modelo, double precioVenta, int stock) {

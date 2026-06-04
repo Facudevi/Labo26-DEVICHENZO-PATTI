@@ -7,11 +7,11 @@ public class Cancion {
     private Persona autor;
     private String titulo;
 
-    public  Cancion(){
+    public Cancion(){
         this.titulo = "";
         this.autor = new Persona("","", LocalDate.now(), "");
     }
-    public  Cancion(String titulo, Persona autor){
+    public Cancion(String titulo, Persona autor){
         this.titulo = titulo;
         this.autor = autor;
     }
@@ -19,15 +19,13 @@ public class Cancion {
     public Persona getAutor() {
         return autor;
     }
-
-    public void setAutor(Persona autor) {
-        this.autor = autor;
-    }
-
     public String getTitulo() {
         return titulo;
     }
 
+    public void setAutor(Persona autor) {
+        this.autor = autor;
+    }
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }

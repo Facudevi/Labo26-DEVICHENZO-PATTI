@@ -3,9 +3,9 @@ package pagos;
 public class Tarjeta extends Metodo_Pago{
     private String numTarjeta;
     private String banco;
-    private String flujo;
+    private Cred_Deb flujo;
 
-    public Tarjeta(String numTarjeta, String banco, String flujo) {
+    public Tarjeta(String numTarjeta, String banco, Cred_Deb flujo) {
         this.numTarjeta = numTarjeta;
         this.banco = banco;
         this.flujo = flujo;
