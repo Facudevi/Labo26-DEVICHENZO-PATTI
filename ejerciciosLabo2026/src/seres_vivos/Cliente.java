@@ -12,4 +12,9 @@ public class Cliente extends Persona{
 
     public String getCelular(){ return celular; }
     public void setCelular(String celular){ this.celular = celular; }
+
+    public String mostrarDetalle(){
+        imprimirDatos();
+        return imprimirDatos() + "Celular: " + this.celular;
+    }
 }

@@ -8,4 +8,11 @@ public class Dispositivo_Entrada extends Periferico {
         super(nombreFabricante, modelo, precioVenta, stock, puertosValidos);
         this.tipoConector = tipoConector;
     }
+
+    public String getTipoConector() { return tipoConector; }
+
+    public void setTipoConector(String tipoConector) { this.tipoConector = tipoConector; }
+
+    @Override
+    public int esEntrada() { return 1; }
 }

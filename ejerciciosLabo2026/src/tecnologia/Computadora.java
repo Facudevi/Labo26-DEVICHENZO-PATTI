@@ -1,15 +1,77 @@
 package tecnologia;
-import tecnologia.componentes.hardware.CPU;
-import tecnologia.componentes.periferico.Periferico;
+import tecnologia.componentes.Componente;
 
 import java.util.ArrayList;
 
 public class Computadora {
-    private CPU cpu;
-    private ArrayList<Periferico> listadispositivos;
+    private ArrayList<Componente> listaComponentes;
+    private double precioT;
 
+    public Computadora(){
+        this.listaComponentes = new ArrayList<>();
+        this.precioT= 0;
+    }
 
+    public ArrayList<Componente> getListaComponentes() { return listaComponentes; }
+    public double getPrecioT() { return precioT; }
 
+    public void setListaComponentes(ArrayList<Componente> listaComponentes) { this.listaComponentes = listaComponentes; }
+    public void setPrecioT(double precioT) { this.precioT = precioT; }
+
+    public void aniadirComponente(Componente componente){
+        listaComponentes.add(componente);
+        this.precioT = calcularPrecio();
+    }
+
+    public float calcularPrecio(){
+        float total = 0;
+
+        for(Componente componente : listaComponentes){
+            total += componente.getPrecioVenta();
+        }
+        return total;
+    }
+
+    public boolean computadoraValida(){
+        int cantCPU = 0;
+        int cantEntrada = 0;
+        int cantSalida = 0;
+
+        for (Componente componente : listaComponentes){
+            cantCPU+=componente.esCPU();
+            cantEntrada+=componente.esEntrada();
+            cantSalida+=componente.esSalida();
+        }
+
+        if (cantCPU>0 && cantEntrada>0 && cantSalida>0){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public String detalleComponentes(){
+        String detalle = "";
+
+        for (Componente componente : listaComponentes){
+            detalle += "- " + componente.getModelo() + " " + componente.getPrecioVenta() + '\n';
+        }
+        return detalle;
+    }
+
+    public String contarDispositivos(){
+        int cantEntrada = 0;
+        int cantSalida = 0;
+
+        for(Componente componente : listaComponentes){
+            cantSalida+=componente.esSalida();
+            cantEntrada+=componente.esEntrada();
+
+        }
+        return "Salida: " + cantSalida +
+               "\nEntrada: " + cantEntrada;
+    }
 
 
 
@@ -51,6 +113,4 @@ public class Computadora {
     }
 
      */
-
-
 }

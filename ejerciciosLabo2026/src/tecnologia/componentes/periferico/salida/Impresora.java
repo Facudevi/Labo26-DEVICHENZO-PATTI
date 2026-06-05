@@ -9,8 +9,5 @@ public class Impresora extends Dispositivo_Salida{
     }
 
     public Metodo_Impresion getMetodo() { return metodoImpresion; }
-    public void setMetodo(Metodo_Impresion metodo) { this.metodoImpresion = metodoImpresion; }
-
-    @Override
-    public boolean esSalida() { return true; }
+    public void setMetodo(Metodo_Impresion metodoImpresion) { this.metodoImpresion = this.metodoImpresion; }
 }

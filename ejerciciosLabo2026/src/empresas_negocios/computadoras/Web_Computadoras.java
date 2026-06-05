@@ -1,6 +1,22 @@
 package empresas_negocios.computadoras;
 
 public class Web_Computadoras {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*
     private Cliente cliente;
     private Metodo_Pago pago;

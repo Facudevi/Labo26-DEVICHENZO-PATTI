@@ -1,11 +1,6 @@
 package pagos;
 
 public class Metodo_Pago {
-    public double calcularTotal(double subtotal) {
-        return subtotal;
-    }
-
-    public double getMontoRecargo(double subtotal) {
-        return 0.0;
-    }
+    public double recargo(){ return 0; }
+    public String metodo(){ return ""; }
 }

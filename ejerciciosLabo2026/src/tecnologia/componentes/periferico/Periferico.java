@@ -8,4 +8,7 @@ public class Periferico extends Componente {
         super(nombreFabricante, modelo, precioVenta, stock);
         this.puertosValidos = puertosValidos;
     }
+
+    public int getPuertosValidos() { return puertosValidos; }
+    public void setPuertosValidos(int puertosValidos) { this.puertosValidos = puertosValidos; }
 }

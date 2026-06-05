@@ -1,5 +1,4 @@
 package tecnologia.componentes.hardware;
-
 import tecnologia.componentes.Componente;
 
 public class CPU extends Componente {
@@ -8,5 +7,5 @@ public class CPU extends Componente {
     }
 
     @Override
-    public boolean esCPU() { return true; }
+    public int esCPU() { return 1; }
 }
