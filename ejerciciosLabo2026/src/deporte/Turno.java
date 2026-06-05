@@ -1,4 +1,4 @@
-package fecha;
+package deporte;
 
 public enum Turno {
     MAÑANA, TARDE, NOCHE;

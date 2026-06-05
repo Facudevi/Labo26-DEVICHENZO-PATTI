@@ -107,6 +107,6 @@ public class Sistema_Computadoras {
     }
 
     public void mostrarDetalledeCompra(Venta compra){
-        System.out.println(compra.detalleCompra());
+        compra.detalleCompra();
     }
 }

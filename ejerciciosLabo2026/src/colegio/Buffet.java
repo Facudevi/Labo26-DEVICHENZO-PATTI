@@ -171,8 +171,8 @@ public class Buffet {
         ArrayList<Materia>  listaMaterias1 = new ArrayList<>();
         ArrayList<Materia>  listaMaterias2 = new ArrayList<>();
 
-        Alumno alumno1 = new Alumno("Juan", "Pérez", LocalDate.of(2010, 5, 15), "Estado 604", 0.00, "5°A", listaNotas1, listaMaterias1);
-        Alumno alumno2 = new Alumno("María", "García", LocalDate.of(2011, 10, 20), "Carabobo 1874", 0.00, "4°B", listaNotas2, listaMaterias2);
+        Alumno alumno1 = new Alumno("Juan", "Pérez", LocalDate.of(2010, 5, 15), "Estado 604", 0.00, Division.QUINTO_A, listaNotas1, listaMaterias1);
+        Alumno alumno2 = new Alumno("María", "García", LocalDate.of(2011, 10, 20), "Carabobo 1874", 0.00, Division.CUARTO_B, listaNotas2, listaMaterias2);
 
         Profesor profesor1 = new Profesor("Martin", "Barbieri", LocalDate.of(2003, 1, 1), "Libertador 1881", 15.5);
         Profesor profesor2 = new Profesor("Franco", "Callipo", LocalDate.of(2003, 2, 2), "Carabobo 1874", 10);

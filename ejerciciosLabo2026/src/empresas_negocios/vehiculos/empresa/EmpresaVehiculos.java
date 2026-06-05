@@ -1,4 +1,4 @@
-package empresas_negocios.vehiculos;
+package empresas_negocios.vehiculos.empresa;
 import colores.Color;
 
 import java.time.LocalDate;

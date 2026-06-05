@@ -1,0 +1,5 @@
+package colegio;
+
+public enum Division {
+    PRIMERO_A, PRIMERO_B, SEGUNDA_A, SEGUNDO_B, TERCERO_A, TERCERO_B, CUARTO_A, CUARTO_B, QUINTO_A, QUINTO_B;
+}

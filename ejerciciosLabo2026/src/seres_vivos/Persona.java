@@ -23,11 +23,11 @@ public class Persona {
     public void setFecha(LocalDate fecha) {this.fecha = fecha;}
     public void setDireccion(String direccion) {this.direccion = direccion;}
 
-    public void imprimirDatos(){
-        System.out.println("Nombre: " + this.nombre);
-        System.out.println("Apellido: " + this.apellido);
-        System.out.println("Edad: " + this.fecha);
-        System.out.println("Direccion: " + this.direccion);
+    public String imprimirDatos(){
+        return "Nombre: " + this.nombre +
+                "Apellido: " + this.apellido +
+                "Edad: " + this.fecha +
+                "Direccion: " + this.direccion;
     }
 
     public int calcularEdad(){

@@ -1,27 +1,28 @@
 package seres_vivos;
+import colegio.Division;
 import colegio.Materia;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Alumno extends PersonaEducativa {
-    private String division;
+    private Division division;
     private ArrayList<Float> listaNotas;
     private ArrayList<Materia> listaMaterias;
 
-    public Alumno(String nombre, String apellido, LocalDate fecha, String direccion, double descuento, String division, ArrayList<Float> listaNotas, ArrayList<Materia> listaMaterias) {
+    public Alumno(String nombre, String apellido, LocalDate fecha, String direccion, double descuento, Division division, ArrayList<Float> listaNotas, ArrayList<Materia> listaMaterias) {
         super(nombre, apellido, fecha, direccion, descuento);
         this.division = division;
         this.listaNotas = listaNotas;
         this.listaMaterias = listaMaterias;
     }
 
-    public String getDivision() {
+    public Division getDivision() {
         return division;
     }
     public ArrayList<Float> getListaNotas() {return listaNotas;}
     public ArrayList<Materia> getListaMaterias() {return listaMaterias;}
 
-    public void setDivision(String division) {
+    public void setDivision(Division division) {
         this.division = division;
     }
     public void setListaNotas(ArrayList<Float> listaNotas) {this.listaNotas = listaNotas;}

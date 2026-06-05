@@ -1,4 +1,4 @@
-package objetos;
+package comida;
 
 public class Cafeteria {
     private  double cantidadMaximaCafe;

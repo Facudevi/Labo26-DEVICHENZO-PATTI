@@ -1,4 +1,4 @@
-package objetos;
+package museo;
 import seres_vivos.Restaurador;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -8,13 +8,13 @@ public class Cuadro {
     private String titulo;
     private String pintor;
     private int anio;
-    private int estado;
+    private Estado_Cuadro estado;
 
-    public Cuadro(String titulo, String pintor, int anio, int estado){
+    public Cuadro(String titulo, String pintor, int anio, Estado_Cuadro estado){
         this.titulo = titulo;
         this.pintor = pintor;
         this.anio = anio;
-        this.estado = Math.min(estado, 10);
+        this.estado = estado;
     }
 
     public String getTitulo() {
@@ -23,19 +23,19 @@ public class Cuadro {
     public int getAnio(){
         return anio;
     }
-    public int getEstado(){
+    public Estado_Cuadro getEstado(){
         return estado;
     }
 
-    public void setEstado(int estado){
-        this.estado = Math.min(estado, 10);
+    public void setEstado(Estado_Cuadro estado){
+        this.estado = estado;
     }
 
     public static void main(String[] args){
         List<Cuadro> inventario = new ArrayList<>();
-        inventario.add(new Cuadro("Mona Lisa", "Da Vinci", 1503, 7));
-        inventario.add(new Cuadro("Guernica", "Picasso", 1937, 4));
-        inventario.add(new Cuadro("Obra Moderna", "Nuevo Artista", 2024, 8));
+        inventario.add(new Cuadro("Mona Lisa", "Da Vinci", 1503, Estado_Cuadro.SIETE));
+        inventario.add(new Cuadro("Guernica", "Picasso", 1937, Estado_Cuadro.CUATRO));
+        inventario.add(new Cuadro("Obra Moderna", "Nuevo Artista", 2024, Estado_Cuadro.OCHO));
 
         List<Restaurador> restauradores = new ArrayList<>();
         restauradores.add(new Restaurador("Elena", "Ramos", LocalDate.of(1970, 2, 20), "5556", 12354576, 25));
