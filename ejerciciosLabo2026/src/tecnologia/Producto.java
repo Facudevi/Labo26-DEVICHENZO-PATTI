@@ -24,15 +24,26 @@ public class Producto {
     public void setStock(int stock) { this.stock = stock; }
     public void setSeccion(Seccion seccion) { this.seccion = seccion; }
 
-    public boolean hayStock(){ return getStock()>0; }
-    public void reducirStock(){ stock--; }
-    public void sumarStock(){ stock++; }
-
     @Override
     public String toString(){
         return "Nombre: " + nombre +
                 ", Precio: " + precio +
                 ", Seccion: " + seccion.name() +
-                ", Stock: " + stock;
+                ", Stock: " + stock +
+                "\n--------------------------";
+    }
+
+    public Producto mayorStock(Producto producto){
+        if(producto.stock > this.stock){
+            return producto;
+        }
+        return this;
+    }
+
+    public Producto menorStock(Producto producto){
+        if(producto.stock < this.stock){
+            return producto;
+        }
+        return this;
     }
 }
