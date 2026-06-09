@@ -1,15 +1,18 @@
 package seres_vivos;
+import empresas_negocios.telefonia.Provincia;
+import tecnologia.Producto;
+
 import java.time.LocalDate;
 
 public class Empleado extends Persona{
     private int DNI;
     private String pais;
     private String numTel;
-    private String provincia;
+    private Provincia provincia;
     private String codigoPais;
     private String franjaHoraria;
 
-    public Empleado(String nombre, String apellido, LocalDate fecha, String direccion, int DNI, String pais, String numTel, String provincia, String codigoPais, String franjaHoraria) {
+    public Empleado(String nombre, String apellido, LocalDate fecha, String direccion, int DNI, String pais, String numTel, Provincia provincia, String codigoPais, String franjaHoraria) {
         super(nombre, apellido, fecha, direccion);
         this.DNI = DNI;
         this.pais = pais;
@@ -22,7 +25,7 @@ public class Empleado extends Persona{
     public int getDNI() { return DNI; }
     public String getPais() { return pais; }
     public String getNumTel() { return numTel; }
-    public String getProvincia() {
+    public Provincia getProvincia() {
         return provincia;
     }
     public String getCodigoPais() {
@@ -35,7 +38,7 @@ public class Empleado extends Persona{
     public void setDNI(int DNI) { this.DNI = DNI; }
     public void setPais(String pais) { this.pais = pais; }
     public void setNumTel(String numTel) { this.numTel = numTel; }
-    public void setProvincia(String provincia) { this.provincia = provincia; }
+    public void setProvincia(Provincia provincia) { this.provincia = provincia; }
     public void setCodigoPais(String codigoPais) { this.codigoPais = codigoPais; }
     public void setFranjaHoraria(String franjaHoraria) { this.franjaHoraria = franjaHoraria; }
 
@@ -48,8 +51,6 @@ public class Empleado extends Persona{
     }
 
     public boolean viveEnElMismoPaisQue(Empleado otroEmpleado) {
-        return this.pais.equalsIgnoreCase(otroEmpleado.getPais());
+        return this.pais.equalsIgnoreCase(otroEmpleado.pais);
     }
-
-
 }

@@ -40,7 +40,7 @@ public class Internacional extends Llamada {
         return super.obtenerDetalle()
                 + " | Codigo pais destino: " + codPaisDestino
                 + " | Franja horaria destino: " + franjaHoraria
-                + " | Llamada internacional ";
+                + " | Llamada Internacional ";
     }
 
     @Override

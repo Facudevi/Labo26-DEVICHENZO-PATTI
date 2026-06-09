@@ -69,7 +69,6 @@ public class EmpresaTelefonica {
         if (origen.viveEnElMismoPaisQue(destino)) {
             return new Local(origen, destino, duracion, origen.getProvincia(), destino.getProvincia());
         }
-
         return new Internacional(origen, destino, duracion, destino.getCodigoPais(), destino.getFranjaHoraria());
     }
 
@@ -120,10 +119,6 @@ public class EmpresaTelefonica {
     }
 
     public void ordenarRankingPorMinutosDescendente(ArrayList<Empleado> empleadosRanking, ArrayList<Integer> minutosRanking) {
-        //TODO: Teniendo en cuenta los dos arreglos,
-        // ordenar desde el empleado que tiene mayor cantidad de minutos
-        // al exterior al menor.
-
         for (int i=0; i < minutosRanking.size() - 1; i++){
             for (int j=0; j < minutosRanking.size() - i - 1; j++){
                 if (minutosRanking.get(j) < minutosRanking.get(j + 1)){
@@ -143,8 +138,6 @@ public class EmpresaTelefonica {
     private void imprimirRankingExterior(ArrayList<Empleado> empleadosRanking, ArrayList<Integer> minutosRanking) {
 
         System.out.println("Ranking de empleados que mas tiempo llamaron al exterior:");
-        //TODO: Mostrar el ranking ordenado concatenando el empleado con los minutos
-
         for (int i=0; i < empleadosRanking.size(); i++){
             System.out.println((i+1) + "- " + empleadosRanking.get(i).getNombreCompleto() + ": " + minutosRanking.get(i) + " minutos");
         }
@@ -152,9 +145,7 @@ public class EmpresaTelefonica {
 
     //mostrar datos
     public void mostrarLlamadasDe(Empleado empleado) {
-        //TODO: Implementar un método que reciba un empleado y muestre
-        // todas las llamadas que haya hecho ese empleado. Luego, mostrar el costo total
-        ArrayList<Llamada> listaLlamadas = new ArrayList<Llamada>();
+        ArrayList<Llamada> listaLlamadas;
         listaLlamadas = obtenerLlamadasDe(empleado);
 
         if(listaLlamadas.isEmpty()){
@@ -169,7 +160,6 @@ public class EmpresaTelefonica {
     }
 
     public void mostrarTodasLasLlamadas() {
-        //TODO: Ver el detalle de todas las llamadas de la empresa por empleado
         System.out.println("-- LLAMADAS DE LA EMPRESA POR EMPLEADO --");
         for (Empleado e : listaEmpleado){
             System.out.println("Llamadas de " + e.getNombreCompleto() + ": ");
@@ -213,15 +203,16 @@ public class EmpresaTelefonica {
     public static void main(String[] args) {
         EmpresaTelefonica empresa = new EmpresaTelefonica("IPM Sistemas");
 
-        Empleado ana = new Empleado("Ana", "Lopez", LocalDate.of(1980, 5, 6), "Malvinas 544", 11111111, "Argentina", "4444-1111", "Buenos Aires", "+54", "GMT-3");
-        Empleado juan = new Empleado("Juan", "Perez", LocalDate.of(1989, 5, 16), "Bolivia 44", 12121212, "Argentina", "3333-3333", "Cordoba", "+54", "GMT-3");
-        Empleado maria = new Empleado("Maria", "Silva", LocalDate.of(1986, 4, 20), "Gloria 4400", 22222222, "Uruguay", "6666-3333", "Montevideo", "+598", "GMT-3");
+        Empleado ana = new Empleado("Ana", "Lopez", LocalDate.of(1980, 5, 6), "Malvinas 544", 11111111, "Argentina", "4444-1111", Provincia.BUENOS_AIRES, "+54", "GMT-3");
+        Empleado juan = new Empleado("Juan", "Perez", LocalDate.of(1989, 5, 16), "Bolivia 44", 12121212, "Argentina", "3333-3333", Provincia.CORDOBA, "+54", "GMT-3");
+        Empleado maria = new Empleado("Maria", "Silva", LocalDate.of(1986, 4, 20), "Gloria 4400", 22222222, "Uruguay", "6666-3333", Provincia.MONTEVIDEO, "+598", "GMT-3");
 
         empresa.agregarEmpleado(ana);
         empresa.agregarEmpleado(juan);
         empresa.agregarEmpleado(maria);
 
         empresa.registrarLlamada(juan, "6666-3333", 5);
+        empresa.registrarLlamada(ana, "3333-3333", 20);
         empresa.registrarLlamada(maria, "4444-1111", 12);
         empresa.registrarLlamada(ana, "6666-3333", 8);
 
