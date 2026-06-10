@@ -13,6 +13,12 @@ public class Persona {
         this.direccion = direccion;
     }
 
+    public Persona(String nombre, String apellido, LocalDate fecha){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fecha = fecha;
+    }
+
     public String getNombre() {return nombre;}
     public String getApellido() {return apellido;}
     public LocalDate getFecha() {return fecha;}
@@ -26,8 +32,7 @@ public class Persona {
     public String imprimirDatos(){
         return "Nombre: " + this.nombre +
                 "Apellido: " + this.apellido +
-                "Edad: " + this.fecha +
-                "Direccion: " + this.direccion;
+                "Edad: " + this.fecha;
     }
 
     public int calcularEdad(){
