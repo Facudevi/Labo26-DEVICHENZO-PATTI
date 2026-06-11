@@ -10,6 +10,6 @@ public class Jugador extends Persona {
         this.nCamiseta = nCamiseta;
     }
 
-    public int getnCamiseta() {return nCamiseta;}
-    public void setnCamiseta(int nCamiseta) {this.nCamiseta = nCamiseta;}
+    public int getnCamiseta() { return nCamiseta; }
+    public void setnCamiseta(int nCamiseta) { this.nCamiseta = nCamiseta; }
 }

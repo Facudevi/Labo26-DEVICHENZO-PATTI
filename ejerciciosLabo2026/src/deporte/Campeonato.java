@@ -6,16 +6,37 @@ public class Campeonato {
     private ArrayList<Equipo> equipos;
     private ArrayList<Partido> partidosProgramados;
 
-    public Campeonato(ArrayList<Equipo> equipos) {
+    public Campeonato() {
         this.equipos = new ArrayList<>();
-        for (Equipo e : equipos) {
-            if (e.comprobarEquipo()) {
-                this.equipos.add(e);
-            } else {
-                System.out.println("El equipo '" + e.getNombre() + "' fue rechazado por no cumplir los requisitos.");
+        this.partidosProgramados = new ArrayList<>();
+    }
+
+    public ArrayList<Equipo> getEquipos() { return equipos; }
+
+
+    public void agregarEquipo(Equipo equipo){
+        if (coincide(equipo)){
+            System.out.println("El equipo '" + equipo.getNombre() + "' ya fue anotado en el campeonato");
+        }
+        else if (equipo.comprobarEquipo()) {
+            equipos.add(equipo);
+            System.out.println("El equipo '" + equipo.getNombre() + "' fue anotado con éxito.");
+        }
+        else {
+            System.out.println("El equipo '" + equipo.getNombre() + "' fue rechazado por no cumplir los requisitos.");
+        }
+    }
+
+
+    public boolean coincide(Equipo equipo){
+        if (equipos.isEmpty()) return false;
+
+        for (Equipo e : equipos){
+            if (e.equals(equipo)){
+                return true;
             }
         }
-        this.partidosProgramados = new ArrayList<>();
+        return false;
     }
 
 

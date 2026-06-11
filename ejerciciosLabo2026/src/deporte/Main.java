@@ -1,19 +1,17 @@
 package deporte;
 import seres_vivos.Jugador;
 
-import java.util.ArrayList;
-
 import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Equipo> listaEquipos = new ArrayList<>();
+        Campeonato campeonato = new Campeonato();
 
-        Equipo equipo1 = new Equipo("Boca Juniors");
-        Equipo equipo2 = new Equipo("River Plate");
-        Equipo equipo3 = new Equipo("San Lorenzo");
-        Equipo equipo4 = new Equipo("Independiente");
-        Equipo equipo5 = new Equipo("Racing");
+        Equipo equipo1 = new Equipo("Curling Covers");
+        Equipo equipo2 = new Equipo("Plate Cambridge");
+        Equipo equipo3 = new Equipo("Blue Hawks");
+        Equipo equipo4 = new Equipo("Boston Warriors");
+        Equipo equipo5 = new Equipo("Racing Club");
 
         equipo1.agregarTurno(Turno.MAÑANA);
         equipo1.agregarTurno(Turno.TARDE);
@@ -36,23 +34,22 @@ public class Main {
         }
 
 
-        equipo1.setCapitan(equipo1.getLista().get(0));
-        equipo2.setCapitan(equipo2.getLista().get(5));
-        equipo3.setCapitan(equipo3.getLista().get(8));
-        equipo4.setCapitan(equipo4.getLista().get(10));
-        equipo5.setCapitan(equipo5.getLista().get(2));
+        equipo1.setCapitan(equipo1.getListaJugadores().get(0));
+        equipo2.setCapitan(equipo2.getListaJugadores().get(5));
+        equipo3.setCapitan(equipo3.getListaJugadores().get(8));
+        equipo4.setCapitan(equipo4.getListaJugadores().get(10));
+        equipo5.setCapitan(equipo5.getListaJugadores().get(2));
 
 
-        listaEquipos.add(equipo1);
-        listaEquipos.add(equipo2);
-        listaEquipos.add(equipo3);
-        listaEquipos.add(equipo4);
-        listaEquipos.add(equipo5);
+        campeonato.agregarEquipo(equipo1);
+        campeonato.agregarEquipo(equipo2);
+        campeonato.agregarEquipo(equipo3);
+        campeonato.agregarEquipo(equipo4);
+        campeonato.agregarEquipo(equipo5);
+        campeonato.agregarEquipo(equipo3);
 
 
-        Campeonato campeonato = new Campeonato(listaEquipos);
-
-        System.out.println("Generando Fixture...");
+        System.out.println("\nGenerando Fixture...");
         campeonato.generarFixture();
 
         campeonato.mostrarFixture();

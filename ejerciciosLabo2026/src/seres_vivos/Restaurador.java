@@ -8,8 +8,8 @@ public class Restaurador extends Persona {
     private int dni;
     private int experiencia;
 
-    public Restaurador(String nombre, String apellido, LocalDate fecha, String direccion, int dni, int experiencia) {
-        super(nombre, apellido, fecha, direccion);
+    public Restaurador(String nombre, String apellido, LocalDate fecha, int dni, int experiencia) {
+        super(nombre, apellido, fecha);
         this.dni = dni;
         this.experiencia = experiencia;
     }
@@ -21,29 +21,30 @@ public class Restaurador extends Persona {
     public void setExperiencia(int experiencia) { this.experiencia = experiencia; }
 
     public String restaurar(Cuadro obra){
-        Estado_Cuadro viejo = obra.getEstado();
         int anioActual = LocalDate.now().getYear();
         int antiguedad = anioActual - obra.getAnio();
+
+        Estado_Cuadro[] estados = Estado_Cuadro.values();
+        int posicionActual = obra.getEstado().ordinal();
+        int ultimaPosicion = estados.length - 1;
+
+        if (posicionActual == ultimaPosicion) {
+            return "El cuadro '" + obra.getTitulo() + "' ya está en su estado máximo (" + obra.getEstado() + ").";
+        }
+
         int mejora;
+        if (antiguedad >= 25) mejora = 2;
+        else mejora = 3;
 
-        if (antiguedad >= 25 && (obra.getEstado().ordinal() < 9)){
-            mejora = obra.getEstado().ordinal()+2;
-            obra.setEstado(Estado_Cuadro.values()[mejora]);
-        }
-        else if (antiguedad < 25 && (obra.getEstado().ordinal() < 8)){
-            mejora = obra.getEstado().ordinal()+3;
-            obra.setEstado(Estado_Cuadro.values()[mejora]);
-        }
-        else if (obra.getEstado().ordinal() == 10){
-            System.out.println("El cuadro esta en perfecto estado");
-        }
-        else {
-            obra.setEstado(Estado_Cuadro.values()[10]);
+        int nuevaPosicion = posicionActual + mejora;
+        if (nuevaPosicion > ultimaPosicion) {
+            nuevaPosicion = ultimaPosicion;
         }
 
-        return "Restauracion completada por " + super.getNombre() + " " + super.getApellido() + ":\n" +
-                "Obra: '" + obra.getTitulo() + "'\n" +
-                "Estado anterior: " + viejo.ordinal()+1 + "/10\n" +
-                "Estado actual: " + obra.getEstado().ordinal()+1 + "/10\n";
+        obra.setEstado(estados[nuevaPosicion]);
+
+        return "Restauracion completada por " + super.getNombreCompleto() +
+                "\nObra: '" + obra.getTitulo() + "'\n" +
+                "Estado anterior: " + estados[posicionActual].getEstado() + "/10 -> Nuevo estado: " + obra.getEstado().getEstado() + "/10";
     }
 }

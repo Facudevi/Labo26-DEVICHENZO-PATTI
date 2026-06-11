@@ -1,5 +1,4 @@
 package tecnologia.productos_electronica.cargadores;
-
 import tecnologia.Producto;
 import tecnologia.productos_electronica.Seccion;
 

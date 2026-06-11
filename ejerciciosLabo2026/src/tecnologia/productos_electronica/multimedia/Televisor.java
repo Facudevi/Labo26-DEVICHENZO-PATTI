@@ -1,5 +1,4 @@
 package tecnologia.productos_electronica.multimedia;
-
 import tecnologia.Producto;
 import tecnologia.productos_electronica.Seccion;
 

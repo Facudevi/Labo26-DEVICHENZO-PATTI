@@ -24,7 +24,7 @@ public class Tienda_Electronica {
     }
 
     public void agregarProducto(Producto producto){
-        if(!listaProductos.contains(producto)) {
+        if(!coincide(producto)) {
             listaProductos.add(producto);
             System.out.println("El producto " + producto.getNombre() + " se a agregado correctamente");
         }
