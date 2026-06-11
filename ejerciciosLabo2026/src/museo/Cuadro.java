@@ -14,8 +14,12 @@ public class Cuadro {
     }
 
     public String getTitulo() { return titulo; }
+    public String getPintor() { return pintor; }
     public int getAnio(){ return anio; }
     public Estado_Cuadro getEstado(){ return estado; }
 
+    public void setTitulo(String titulo) { this.titulo = titulo; }
+    public void setPintor(String pintor) { this.pintor = pintor; }
+    public void setAnio(int anio) { this.anio = anio; }
     public void setEstado(Estado_Cuadro estado){ this.estado = estado; }
 }

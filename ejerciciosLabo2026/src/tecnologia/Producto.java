@@ -24,6 +24,7 @@ public class Producto {
     public void setStock(int stock) { this.stock = stock; }
     public void setSeccion(Seccion seccion) { this.seccion = seccion; }
 
+
     @Override
     public String toString(){
         return "Nombre: " + nombre +
@@ -33,12 +34,14 @@ public class Producto {
                 "\n--------------------------";
     }
 
+
     public Producto mayorStock(Producto producto){
         if(producto.stock > this.stock){
             return producto;
         }
         return this;
     }
+
 
     public Producto menorStock(Producto producto){
         if(producto.stock < this.stock){

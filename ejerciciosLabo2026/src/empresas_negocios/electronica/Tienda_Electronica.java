@@ -13,6 +13,8 @@ public class Tienda_Electronica {
     }
 
     public ArrayList<Producto> getListaProductos() { return listaProductos; }
+    public void setListaProductos(ArrayList<Producto> listaProductos) { this.listaProductos = listaProductos; }
+
 
     public boolean coincide(Producto producto){
         for (Producto p : listaProductos){
@@ -22,6 +24,7 @@ public class Tienda_Electronica {
         }
         return false;
     }
+
 
     public void agregarProducto(Producto producto){
         if(!coincide(producto)) {
@@ -33,6 +36,7 @@ public class Tienda_Electronica {
         }
     }
 
+
     public void eliminarProducto(Producto producto){
         if(coincide(producto)) {
             listaProductos.remove(producto);
@@ -42,6 +46,7 @@ public class Tienda_Electronica {
             System.out.println("No se encontró el producto a eliminar");
         }
     }
+
 
     public void modificar(Producto producto){
         Scanner input = new Scanner(System.in);
@@ -55,6 +60,7 @@ public class Tienda_Electronica {
         }
     }
 
+
     public Producto obtenerMayorStock(){
         Producto productoMayor = listaProductos.get(0);
         for(Producto p : listaProductos){
@@ -63,6 +69,7 @@ public class Tienda_Electronica {
         return productoMayor;
     }
 
+
     public Producto obtenerMenorStock(){
         Producto productoMenor = listaProductos.get(0);
         for(Producto p : listaProductos){
@@ -70,6 +77,7 @@ public class Tienda_Electronica {
         }
         return productoMenor;
     }
+
 
     public void mostrarDetalleSeccion(Seccion seccion){
         System.out.println("Productos de: " + seccion.name());

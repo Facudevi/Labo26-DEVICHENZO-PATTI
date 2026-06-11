@@ -20,6 +20,7 @@ public class Restaurador extends Persona {
     public void setDni(int dni) { this.dni = dni; }
     public void setExperiencia(int experiencia) { this.experiencia = experiencia; }
 
+
     public String restaurar(Cuadro obra){
         int anioActual = LocalDate.now().getYear();
         int antiguedad = anioActual - obra.getAnio();

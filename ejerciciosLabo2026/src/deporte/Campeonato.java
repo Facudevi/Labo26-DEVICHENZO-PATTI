@@ -12,6 +12,10 @@ public class Campeonato {
     }
 
     public ArrayList<Equipo> getEquipos() { return equipos; }
+    public void setEquipos(ArrayList<Equipo> equipos) { this.equipos = equipos; }
+
+    public ArrayList<Partido> getPartidosProgramados() { return partidosProgramados; }
+    public void setPartidosProgramados(ArrayList<Partido> partidosProgramados) { this.partidosProgramados = partidosProgramados; }
 
 
     public void agregarEquipo(Equipo equipo){
