@@ -7,106 +7,84 @@ import tecnologia.componentes.Componente;
 import java.util.ArrayList;
 
 public class Sistema_Computadoras {
-    private ArrayList<Venta> listaVentas;
-    private ArrayList<Componente> componentes;
+    private ArrayList<Compra> ventas;
+    private ArrayList<Componente> catalogoGeneral;
 
     public Sistema_Computadoras() {
-        this.listaVentas = new ArrayList<>();
-        this.componentes = new ArrayList<>();
+        this.ventas = new ArrayList<>();
+        this.catalogoGeneral = new ArrayList<>();
     }
 
-    public ArrayList<Componente> getComponentes() { return componentes; }
-    public ArrayList<Venta> getCompras() { return listaVentas; }
+    public ArrayList<Compra> getVentas() { return ventas; }
 
-    public void setComponentes(ArrayList<Componente> componentes) { this.componentes = componentes; }
-    public void setCompras(ArrayList<Venta> listaVentas) { this.listaVentas = listaVentas; }
 
-    public void actualizarPrecioComponente(int aumento, Componente componente){
-        float porcentaje = (float) (componente.getPrecioVenta() * ((float) aumento /100));
-
-        componente.setPrecioVenta(componente.getPrecioVenta() + porcentaje);
+    public void registrarEnCatalogo(Componente c) {
+        catalogoGeneral.add(c);
     }
 
-    public Venta compra(Cliente cliente, Metodo_Pago metodo, Computadora computadora){
-        if (computadora.computadoraValida()){
-            if (hayStock(computadora)){
-                Venta compra = new Venta(cliente, metodo, computadora);
-                actualizarStock(computadora);
-                listaVentas.add(compra);
-                return compra;
-            }
-            else {
-                System.out.println("No hay stock suficiente en la tienda");
+
+    public void realizarCompra(Cliente cliente, Computadora comp, Metodo_Pago pago) {
+        if (!comp.cumpleMinimoCompra()) {
+            System.out.println("ERROR: No se cumple la compra mínima (Falta CPU, un dispositivo de Entrada o de Salida).\n");
+            return;
+        }
+
+        if (comp.getCpu().getStock() <= 0) {
+            System.out.println("ERROR: No hay stock disponible para la CPU elegida.\n");
+            return;
+        }
+
+        for (Componente c : comp.getPerifericos()) {
+            if (c.getStock() <= 0) {
+                System.out.println("ERROR: No hay suficiente stock del componente: " + c.getNombreComponente() + "\n");
+                return;
             }
         }
-        else {
-            System.out.println("Le faltan componentes a la computadora");
+
+        comp.getCpu().setStock(comp.getCpu().getStock() - 1);
+        for (Componente c : comp.getPerifericos()) {
+            c.setStock(c.getStock() - 1);
         }
-        return null;
+
+        Compra nuevaVenta = new Compra(cliente, comp, pago);
+        ventas.add(nuevaVenta);
+        System.out.println("¡Compra realizada con éxito!");
     }
 
-    public boolean hayStock(Computadora computadora){
 
-        for (Componente componente : computadora.getListaComponentes()){
-            int cont=1;
-            for (Componente componente1 : computadora.getListaComponentes()){
-                if (componente.equals(componente1)){
-                    cont++;
+    public void calcularComponenteMasVendido() {
+        if (ventas.isEmpty()) {
+            System.out.println("No se han realizado ventas en el sistema.");
+            return;
+        }
+
+        Componente masVendido = null;
+        int maxVentas = -1;
+
+        for (Componente compCatalogo : catalogoGeneral) {
+            int vecesVendido = 0;
+
+            for (Compra v : ventas) {
+                Computadora pc = v.getComputadora();
+
+                if (pc.getCpu().equals(compCatalogo)) {
+                    vecesVendido++;
                 }
-            }
-            if (componente.getStock()< componente.getStock()-cont){
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public void actualizarStock(Computadora computadora){
-        for (Componente componente : computadora.getListaComponentes()){
-            componente.setStock(componente.getStock() - 1);
-        }
-    }
-
-    public Componente calcularMasVendido(){
-        int cont1 = 0;
-        Componente top1 = null;
-
-        for(Componente componente : componentes){
-            int cont = 0;
-            for(Venta compra : listaVentas){
-
-                if (compra.getComputadora().getListaComponentes().contains(componente)){
-                    cont ++;
+                for (Componente p : pc.getPerifericos()) {
+                    if (p.equals(compCatalogo)) {
+                        vecesVendido++;
+                    }
                 }
             }
 
-            if (cont > cont1){
-                cont1 = cont;
-                top1 = componente;
+            if (vecesVendido > maxVentas) {
+                maxVentas = vecesVendido;
+                masVendido = compCatalogo;
             }
         }
-        return top1;
-    }
 
-    public void cantEntradaySalida(Computadora computadora){
-        String cantDisp = "";
-
-        for (Venta compra : listaVentas){
-            if (compra.getComputadora().equals(computadora)){
-                cantDisp = computadora.contarDispositivos();
-            }
+        if (masVendido != null) {
+            System.out.println("Componente más vendido: " + masVendido.getNombreComponente() + " (Vendido " + maxVentas + " veces)");
         }
-        System.out.println(cantDisp);
-    }
-
-    public void componenteMasVendido(){
-        if (!listaVentas.isEmpty()){
-            Componente top1 = calcularMasVendido();
-            System.out.println("El componente mas vendido es: " + top1.getModelo());
-        }
-    }
-
-    public void mostrarDetalledeCompra(Venta compra){
-        compra.detalleCompra();
     }
 }

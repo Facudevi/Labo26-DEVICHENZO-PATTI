@@ -122,47 +122,40 @@ public class Buffet {
     }
 
     public void top3(){
-        int[] contador = new int[menu.size()];
-        int max1 = 0;
-        int max2 = 0;
-        int max3 = 0;
-        String nomPlato1 = "";
-        String nomPlato2 = "";
-        String nomPlato3 = "";
+        ArrayList<Integer> contador = new ArrayList<>();
+        ArrayList<Plato> listaPlatos = new ArrayList<>();
 
-        for (int i = 0; i < menu.size(); i++){
-            Plato pl = menu.get(i);
+        for (Plato plato : menu){
+            listaPlatos.add(plato);
+            int totalPedidos = 0;
             for (Pedido p : pedido){
-                if (p.getPlato().getNombre().equals(pl.getNombre())){
-                    contador[i]++;
+                if (p.getPlato().equals(plato)){
+                    totalPedidos ++;
                 }
             }
+            contador.add(totalPedidos);
+        }
 
-            if (contador[i] > max1){
-                max3 = max2;
-                nomPlato3 = nomPlato2;
-                max2 = max1;
-                nomPlato2 = nomPlato1;
-                max1 = contador[i];
-                nomPlato1 = pl.getNombre();
-            }
-            else if (contador[i] > max2){
-                max3 = max2;
-                nomPlato3 = nomPlato2;
-                max2 = contador[i];
-                nomPlato2 = pl.getNombre();
-            }
-            else if (contador[i] > max3){
-                max3 = contador[i];
-                nomPlato3 = pl.getNombre();
+        for (int i=0; i< listaPlatos.size()-1; i++){
+            for (int j=0; j< listaPlatos.size()-1-i; j++){
+                if (contador.get(j) < contador.get(j+1)){
+                    int temp = contador.get(j);
+                    contador.set(j, contador.get(j+1));
+                    contador.set(j+1, temp);
+
+                    Plato plato = listaPlatos.get(j);
+                    listaPlatos.set(j, listaPlatos.get(j+1));
+                    listaPlatos.set(j+1, plato);
+                }
             }
         }
 
         System.out.println("-- PLATOS MÁS PEDIDOS --");
-        System.out.println("1- " + nomPlato1 + ": " + max1);
-        System.out.println("2- " + nomPlato2 + ": " + max2);
-        System.out.println("3- " + nomPlato3 + ": " + max3);
+        for(int i=0; i<3; i++){
+            System.out.println(i+1 + "- " + listaPlatos.get(i).getNombre() + ": " + contador.get(i));
+        }
     }
+
 
     public static void main(String[] args) {
         ArrayList<Float> listaNotas1 = new ArrayList<>();

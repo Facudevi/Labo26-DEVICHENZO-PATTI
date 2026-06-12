@@ -12,4 +12,12 @@ public class Cargador_Portatil extends Producto {
 
     public int getCantCargas() { return cantCargas; }
     public void setCantCargas(int cantCargas) { this.cantCargas = cantCargas; }
+
+
+    @Override
+    public String toString(){
+        return super.toString() +
+                " | Cantidad de cargas: " + cantCargas +
+                "\n--------------------------";
+    }
 }

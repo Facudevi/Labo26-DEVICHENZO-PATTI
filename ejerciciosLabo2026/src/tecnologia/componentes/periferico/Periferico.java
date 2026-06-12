@@ -2,13 +2,20 @@ package tecnologia.componentes.periferico;
 import tecnologia.componentes.Componente;
 
 public class Periferico extends Componente {
-    private int puertosValidos;
+    private int cantidadPuertos;
 
-    public Periferico(String nombreFabricante, String modelo, double precioVenta, int stock, int puertosValidos) {
-        super(nombreFabricante, modelo, precioVenta, stock);
-        this.puertosValidos = puertosValidos;
+    public Periferico(String fabricante, String modelo, double precioVenta, int stock, int cantidadPuertos) {
+        super(fabricante, modelo, precioVenta, stock);
+        this.cantidadPuertos = cantidadPuertos;
     }
 
-    public int getPuertosValidos() { return puertosValidos; }
-    public void setPuertosValidos(int puertosValidos) { this.puertosValidos = puertosValidos; }
+    public int getCantidadPuertos() {
+        return cantidadPuertos;
+    }
+
+
+    @Override
+    public String getCategoria() {
+        return "Periferico";
+    }
 }

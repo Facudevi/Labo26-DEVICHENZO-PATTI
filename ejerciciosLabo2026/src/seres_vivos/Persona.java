@@ -6,6 +6,11 @@ public class Persona {
     private LocalDate fecha;
     private String direccion;
 
+    public Persona(String nombre, String apellido){
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
     public Persona(String nombre, String apellido, LocalDate fecha, String direccion){
         this.nombre = nombre;
         this.apellido = apellido;
@@ -29,19 +34,23 @@ public class Persona {
     public void setFecha(LocalDate fecha) {this.fecha = fecha;}
     public void setDireccion(String direccion) {this.direccion = direccion;}
 
+
     public String imprimirDatos(){
         return "Nombre: " + this.nombre +
                 "Apellido: " + this.apellido +
                 "Edad: " + this.fecha;
     }
 
+
     public int calcularEdad(){
         return LocalDate.now().getYear() - this.getFecha().getYear();
     }
 
+
     public String getNombreCompleto() {
         return nombre + " " + apellido;
     }
+
 
     public static void main(String[] args){
         Persona persona1 = new Persona("Camila", "Estevez", LocalDate.of(1999, 2, 27), "Superi 2001");

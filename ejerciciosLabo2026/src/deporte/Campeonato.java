@@ -47,17 +47,18 @@ public class Campeonato {
     public void generarFixture() {
         ArrayList<Partido> partidosPendientes = new ArrayList<>();
 
-        for (Equipo e1 : equipos) {
-            for (Equipo e2 : equipos) {
-                if (!e1.equals(e2)) {
-                    Partido nuevoPartido = new Partido(e1, e2);
+        for (int i=0; i<equipos.size(); i++){
+            for (int j= i+1; j<equipos.size(); j++){
+                Equipo e1 = equipos.get(i);
+                Equipo e2 = equipos.get(j);
 
-                    if (nuevoPartido.getTurno() == null) {
-                        System.out.println("ALERTA: El partido '" + e1.getNombre() + " VS " + e2.getNombre() + "' NO puede programarse por falta de turnos en común.");
-                    }
-                    else {
-                        partidosPendientes.add(nuevoPartido);
-                    }
+                Partido nuevoPartido = new Partido(e1, e2);
+
+                if (nuevoPartido.getTurno() == null) {
+                    System.out.println("ALERTA: El partido '" + e1.getNombre() + " VS " + e2.getNombre() + "' NO puede programarse por falta de turnos en común.");
+                }
+                else {
+                    partidosPendientes.add(nuevoPartido);
                 }
             }
         }

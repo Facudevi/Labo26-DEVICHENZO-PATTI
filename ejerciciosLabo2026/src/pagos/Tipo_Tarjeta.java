@@ -1,5 +1,5 @@
 package pagos;
 
-public enum Cred_Deb {
+public enum Tipo_Tarjeta {
     CREDITO, DEBITO;
 }

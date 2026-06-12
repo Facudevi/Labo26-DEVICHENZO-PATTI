@@ -2,10 +2,19 @@ package tecnologia.componentes.hardware;
 import tecnologia.componentes.Componente;
 
 public class CPU extends Componente {
-    public CPU(String nombreFabricante, String modelo, double precioVenta, int stock) {
-        super(nombreFabricante, modelo, precioVenta, stock);
+    public CPU(String fabricante, String modelo, double precioVenta, int stock) {
+        super(fabricante, modelo, precioVenta, stock);
     }
 
+
     @Override
-    public int esCPU() { return 1; }
+    public String getCategoria() {
+        return "CPU";
+    }
+
+
+    @Override
+    public String getNombreComponente() {
+        return "CPU " + getFabricante() + " " + getModelo();
+    }
 }

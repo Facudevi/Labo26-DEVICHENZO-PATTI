@@ -1,116 +1,68 @@
 package tecnologia;
 import tecnologia.componentes.Componente;
+import tecnologia.componentes.hardware.CPU;
 
 import java.util.ArrayList;
 
 public class Computadora {
-    private ArrayList<Componente> listaComponentes;
-    private double precioT;
+    private CPU cpu;
+    private ArrayList<Componente> perifericos;
 
-    public Computadora(){
-        this.listaComponentes = new ArrayList<>();
-        this.precioT= 0;
+    public Computadora(CPU cpu) {
+        this.cpu = cpu;
+        this.perifericos = new ArrayList<>();
     }
 
-    public ArrayList<Componente> getListaComponentes() { return listaComponentes; }
-    public double getPrecioT() { return precioT; }
-
-    public void setListaComponentes(ArrayList<Componente> listaComponentes) { this.listaComponentes = listaComponentes; }
-    public void setPrecioT(double precioT) { this.precioT = precioT; }
-
-    public void aniadirComponente(Componente componente){
-        listaComponentes.add(componente);
-        this.precioT = calcularPrecio();
+    public void agregarPeriferico(Componente c) {
+        this.perifericos.add(c);
     }
 
-    public float calcularPrecio(){
-        float total = 0;
+    public CPU getCpu() { return cpu; }
+    public ArrayList<Componente> getPerifericos() { return perifericos; }
 
-        for(Componente componente : listaComponentes){
-            total += componente.getPrecioVenta();
+
+    public boolean cumpleMinimoCompra() {
+        int contEntrada = 0;
+        int contSalida = 0;
+
+        for (Componente c : perifericos) {
+            if (c.getCategoria().equals("Entrada")) {
+                contEntrada++;
+            }
+            if (c.getCategoria().equals("Salida")) {
+                contSalida++;
+            }
+        }
+
+        if (cpu != null && contEntrada >= 1 && contSalida >= 1) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public double calcularPrecioComponentes() {
+        double total = cpu.getPrecioVenta();
+        for (Componente c : perifericos) {
+            total += c.getPrecioVenta();
         }
         return total;
     }
 
-    public boolean computadoraValida(){
-        int cantCPU = 0;
-        int cantEntrada = 0;
-        int cantSalida = 0;
 
-        for (Componente componente : listaComponentes){
-            cantCPU+=componente.esCPU();
-            cantEntrada+=componente.esEntrada();
-            cantSalida+=componente.esSalida();
-        }
+    public void mostrarCantidadPorTipo() {
+        int contEntrada = 0;
+        int contSalida = 0;
 
-        if (cantCPU>0 && cantEntrada>0 && cantSalida>0){
-            return true;
+        for (Componente c : perifericos) {
+            if (c.getCategoria().equals("Entrada")) {
+                contEntrada++;
+            }
+            if (c.getCategoria().equals("Salida")) {
+                contSalida++;
+            }
         }
-        else {
-            return false;
-        }
+        System.out.println("Componentes de Entrada: " + contEntrada);
+        System.out.println("Componentes de Salida: " + contSalida);
     }
-
-    public String detalleComponentes(){
-        String detalle = "";
-
-        for (Componente componente : listaComponentes){
-            detalle += "- " + componente.getModelo() + " " + componente.getPrecioVenta() + '\n';
-        }
-        return detalle;
-    }
-
-    public String contarDispositivos(){
-        int cantEntrada = 0;
-        int cantSalida = 0;
-
-        for(Componente componente : listaComponentes){
-            cantSalida+=componente.esSalida();
-            cantEntrada+=componente.esEntrada();
-
-        }
-        return "Salida: " + cantSalida +
-               "\nEntrada: " + cantEntrada;
-    }
-
-
-
-    /*
-    private ArrayList<Componente> listaComponentes;
-
-    public Computadora() {
-        this.listaComponentes = new ArrayList<>();
-    }
-
-    public ArrayList<Componente> getComponentes() { return listaComponentes; }
-
-    public void agregarComponente(Componente comp){
-        if (comp.hayStock()){
-            comp.reducirStock();
-            listaComponentes.add(comp);
-        }
-    }
-
-    public boolean validarArmado(){
-        int cpu = 0;
-        int entrada = 0;
-        int salida = 0;
-
-        for (Componente c : listaComponentes){
-            if (c.esCPU()) cpu++;
-            if (c.esEntrada()) entrada++;
-            if (c.esSalida()) salida++;
-        }
-        return ((cpu > 1) && (entrada > 1) && (salida > 1));
-    }
-
-    public double calcularSubtotal(){
-        double suma = 0;
-        for (Componente c : listaComponentes){
-            suma += c.getPrecioVenta();
-        }
-        return suma;
-    }
-
-     */
 }

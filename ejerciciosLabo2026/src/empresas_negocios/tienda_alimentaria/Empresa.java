@@ -48,21 +48,12 @@ public class Empresa {
 
     // encontrar el producto que se envasó más recientemente para mostrar su numero de lote
     public int envasadoRecientemente(){
-        ArrayList<Fresco> listaF = new ArrayList<>();
+        Producto_Alimentario frescoEnv = null;
         for (Producto_Alimentario p : lista){
-            if(p.getTipo().equals("Fresco")){
-                Fresco pFresco = (Fresco) p;
-                listaF.add(pFresco);
+            if(p.getTipo().equals("Fresco")) {
+                if (frescoEnv == null) frescoEnv = p;
+                else frescoEnv = p.obtenerMasReciente(frescoEnv);
             }
-        }
-
-        if (listaF.isEmpty()){
-            return 0;
-        }
-
-        Producto_Alimentario frescoEnv = listaF.get(0);
-        for (Producto_Alimentario p : listaF){
-            frescoEnv = p.obtenerMasReciente(frescoEnv);
         }
 
         return frescoEnv.getNumLote();

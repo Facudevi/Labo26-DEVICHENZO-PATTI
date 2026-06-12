@@ -45,6 +45,11 @@ public class Main {
         campeonato.agregarEquipo(equipo5);
         campeonato.agregarEquipo(equipo3);
 
+        System.out.println("\nCantidad de jugadores en cada equipo: ");
+        for (Equipo e : campeonato.getEquipos()) {
+            System.out.println(e.getNombre() + ": " + e.cantJugadores());
+        }
+
         System.out.println("\nGenerando Fixture...");
         campeonato.generarFixture();
 

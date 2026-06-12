@@ -1,27 +1,36 @@
 package tecnologia.componentes;
 
 public class Componente {
-    private String nombreFabricante;
+    private String fabricante;
     private String modelo;
     private double precioVenta;
     private int stock;
 
-    public Componente(String nombreFabricante, String modelo, double precioVenta, int stock) {
-        this.nombreFabricante = nombreFabricante;
+    public Componente(String fabricante, String modelo, double precioVenta, int stock) {
+        this.fabricante = fabricante;
         this.modelo = modelo;
         this.precioVenta = precioVenta;
         this.stock = stock;
     }
 
+    public String getFabricante() { return fabricante; }
     public String getModelo() { return modelo; }
     public double getPrecioVenta() { return precioVenta; }
     public int getStock() { return stock; }
-
-    public void setModelo(String modelo) { this.modelo = modelo; }
-    public void setPrecioVenta(double precioVenta) { this.precioVenta = precioVenta; }
     public void setStock(int stock) { this.stock = stock; }
 
-    public int esCPU(){ return 0; }
-    public int esSalida(){ return 0; }
-    public int esEntrada(){ return 0;}
+
+    public void actualizarPrecio(double porcentajeAumento) {
+        this.precioVenta = this.precioVenta + (this.precioVenta * (porcentajeAumento / 100));
+    }
+
+
+    public String getCategoria() {
+        return "General";
+    }
+
+
+    public String getNombreComponente() {
+        return fabricante + " " + modelo;
+    }
 }

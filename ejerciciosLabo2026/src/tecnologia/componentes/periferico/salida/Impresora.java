@@ -1,13 +1,14 @@
 package tecnologia.componentes.periferico.salida;
 
 public class Impresora extends Dispositivo_Salida{
-    private Metodo_Impresion metodoImpresion;
+    private Metodo_Impresion metodo;
 
-    public Impresora(String nombreFabricante, String modelo, double precioVenta, int stock, int puertosValidos, Metodo_Impresion metodoImpresion) {
-        super(nombreFabricante, modelo, precioVenta, stock, puertosValidos);
-        this.metodoImpresion = metodoImpresion;
+    public Impresora(String fabricante, String modelo, double precioVenta, int stock, int cantidadPuertos, Metodo_Impresion metodo) {
+        super(fabricante, modelo, precioVenta, stock, cantidadPuertos);
+        this.metodo = metodo;
     }
 
-    public Metodo_Impresion getMetodo() { return metodoImpresion; }
-    public void setMetodo(Metodo_Impresion metodoImpresion) { this.metodoImpresion = this.metodoImpresion; }
+
+    @Override
+    public String getNombreComponente() { return "Impresora " + getFabricante() + " (" + metodo + ")"; }
 }

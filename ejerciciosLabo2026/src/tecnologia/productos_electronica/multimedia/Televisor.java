@@ -17,4 +17,13 @@ public class Televisor extends Producto {
 
     public void setTecnologia(Tecnologia_TV tecnologia) { this.tecnologia = tecnologia; }
     public void setResolucionPix(int resolucionPix) { this.resolucionPix = resolucionPix; }
+
+
+    @Override
+    public String toString(){
+        return super.toString() +
+                " | Tecnología: " + tecnologia +
+                " | Resolucion en pixeles: " + resolucionPix +
+                "\n--------------------------";
+    }
 }

@@ -11,4 +11,12 @@ public class Equipo_Sonido extends Producto {
     }
 
     public boolean isBluetooth() { return bluetooth; }
+
+
+    @Override
+    public String toString(){
+        return super.toString() +
+                " | Bluetooth: " + bluetooth +
+                "\n--------------------------";
+    }
 }

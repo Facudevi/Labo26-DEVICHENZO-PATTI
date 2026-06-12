@@ -13,7 +13,7 @@ public class Main_Electronica {
         Equipo_Sonido sonido1 = new Equipo_Sonido("Parlante", 25.99, 10, true);
         Televisor televisor1 = new Televisor("Samsung TV", 42.99, 5, Tecnologia_TV.FULL_HD, 1080);
         Televisor televisor2 = new Televisor("LG TV", 50.99, 7, Tecnologia_TV.CUATRO_K, 2160);
-        Cargador_Portatil cargador1 = new Cargador_Portatil("Belkin BoostCharge", 12.05, 20, 40);
+        Cargador_Portatil cargador1 = new Cargador_Portatil("Cargador Universal", 12.05, 20, 40);
 
         tienda.agregarProducto(sonido1);
         tienda.agregarProducto(televisor1);
