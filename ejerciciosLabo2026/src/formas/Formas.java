@@ -1,13 +1,8 @@
 package formas;
 
-public class Formas {
+public abstract class Formas {
 
-    public double obtenerArea(){
-       return  0;
-    }
+    public abstract double obtenerArea();
 
-    public double obtenerPerimetro(){
-        return 0;
-    }
-
+    public abstract double obtenerPerimetro();
 }

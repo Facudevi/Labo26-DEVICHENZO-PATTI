@@ -52,7 +52,7 @@ public class Empresa {
         for (Producto_Alimentario p : lista){
             if(p.getTipo().equals("Fresco")) {
                 if (frescoEnv == null) frescoEnv = p;
-                else frescoEnv = p.obtenerMasReciente(frescoEnv);
+                 else frescoEnv = p.obtenerMasReciente(frescoEnv);
             }
         }
 

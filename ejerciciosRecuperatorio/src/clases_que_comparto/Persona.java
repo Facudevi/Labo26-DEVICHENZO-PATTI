@@ -1,7 +1,7 @@
-package seres_vivos;
+package clases_que_comparto;
 import java.time.LocalDate;
 
-public abstract class Persona {
+public class Persona {
     private String nombre, apellido;
     private LocalDate fecha;
     private String direccion;
@@ -49,5 +49,11 @@ public abstract class Persona {
 
     public String getNombreCompleto() {
         return nombre + " " + apellido;
+    }
+
+
+    public static void main(String[] args){
+        Persona persona1 = new Persona("Camila", "Estevez", LocalDate.of(1999, 2, 27), "Superi 2001");
+        persona1.imprimirDatos();
     }
 }

@@ -2,7 +2,7 @@ package seres_vivos;
 
 import java.time.LocalDate;
 
-public class PersonaEducativa extends Persona{
+public abstract class PersonaEducativa extends Persona{
     private double descuento;
 
     public PersonaEducativa(String nombre, String apellido, LocalDate fecha, String direccion, double descuento) {
