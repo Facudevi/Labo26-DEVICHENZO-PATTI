@@ -1,4 +1,4 @@
-package comida.recetas.platos;
+package comida.platos;
 
 public enum Estado_Entrada {
     FRIO, CALIENTE;

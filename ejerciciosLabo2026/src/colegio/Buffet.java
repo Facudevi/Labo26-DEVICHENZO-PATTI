@@ -1,6 +1,6 @@
 package colegio;
 import comida.Pedido;
-import comida.recetas.Plato;
+import comida.Plato;
 import seres_vivos.Alumno;
 import seres_vivos.Profesor;
 

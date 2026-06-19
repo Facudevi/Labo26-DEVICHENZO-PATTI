@@ -3,7 +3,7 @@ import seres_vivos.Empleado;
 
 import java.time.LocalDateTime;
 
-public class Llamada {
+public abstract class Llamada {
     private Empleado empleadoOrigen;
     private Empleado empleadoDestino;
     private LocalDateTime fechaLlamada;

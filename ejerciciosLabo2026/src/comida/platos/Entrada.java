@@ -1,6 +1,6 @@
-package comida.recetas.platos;
-import comida.recetas.Dificultad;
-import comida.recetas.Plato;
+package comida.platos;
+import comida.Dificultad;
+import comida.Plato;
 
 public class Entrada extends Plato {
     private Estado_Entrada estado;
@@ -15,14 +15,14 @@ public class Entrada extends Plato {
 
 
     @Override
-    public void mostrarDetalle() {
+    public String toString() {
         if(this.estado.equals(Estado_Entrada.FRIO)){
-            System.out.println("Pasos: " + getListaPasos());
-            System.out.println("- Guardar la preparación en la headera -");
+            return "Pasos: " + getListaPasos() +
+                    "\n" + "- Guardar la preparación en la headera -";
         }
         else {
-            System.out.println("- Recordar prender el horno -");
-            System.out.println("Pasos: " + getListaPasos());
+            return "- Recordar prender el horno -" +
+                    "\nPasos: " + getListaPasos();
         }
     }
 }

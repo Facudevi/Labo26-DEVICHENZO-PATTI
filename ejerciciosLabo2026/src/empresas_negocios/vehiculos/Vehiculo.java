@@ -1,10 +1,11 @@
-package empresas_negocios.vehiculos.empresa;
+package empresas_negocios.vehiculos;
 import colores.Color;
+import empresas_negocios.vehiculos.empresa.Marca;
 
 import java.time.LocalDate;
 
-public class Vehiculo {
-    private  Marca marca;
+public abstract class Vehiculo {
+    private Marca marca;
     private  String modelo;
     private Color color;
     private int cantRuedas;

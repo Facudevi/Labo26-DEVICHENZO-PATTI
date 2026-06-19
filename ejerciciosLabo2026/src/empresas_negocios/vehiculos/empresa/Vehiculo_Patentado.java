@@ -1,9 +1,10 @@
 package empresas_negocios.vehiculos.empresa;
 import colores.Color;
+import empresas_negocios.vehiculos.Vehiculo;
 
 import java.time.LocalDate;
 
-public class Vehiculo_Patentado extends Vehiculo{
+public abstract class Vehiculo_Patentado extends Vehiculo {
     private double velocidad;
     private String patente;
 

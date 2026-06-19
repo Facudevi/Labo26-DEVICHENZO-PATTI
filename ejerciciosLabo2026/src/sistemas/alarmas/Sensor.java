@@ -1,6 +1,6 @@
 package sistemas.alarmas;
 
-public class Sensor {
+public abstract class Sensor {
     private double umbral;
 
     public Sensor(double umbral) { this.umbral = umbral; }

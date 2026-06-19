@@ -1,6 +1,6 @@
-package comida.recetas.platos;
-import comida.recetas.Dificultad;
-import comida.recetas.Plato;
+package comida.platos;
+import comida.Dificultad;
+import comida.Plato;
 
 public class Postre extends Plato {
     private double temperatura;
@@ -20,11 +20,13 @@ public class Postre extends Plato {
 
 
     @Override
-    public void mostrarDetalle() {
-        System.out.println("Pasos de preparación: ");
-        for (String p : getListaPasos()){
-            System.out.println("- " + p);
-            System.out.println("RECUERDA: en todo momento mantener la cocina limpia y el horno al mínimo");
+    public String toString() {
+        String res = "";
+        res += ("Pasos de preparación: ");
+        for (String p : getListaPasos()) {
+            res += "- " + p +
+                    "RECUERDA: en todo momento mantener la cocina limpia y el horno al mínimo";
         }
+        return res;
     }
 }

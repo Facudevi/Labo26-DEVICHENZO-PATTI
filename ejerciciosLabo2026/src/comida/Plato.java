@@ -1,4 +1,4 @@
-package comida.recetas;
+package comida;
 
 import java.util.ArrayList;
 
@@ -30,5 +30,12 @@ public abstract class Plato {
     public void setListaPasos(ArrayList<String> listaPasos) { this.listaPasos = listaPasos; }
 
 
-    public abstract void mostrarDetalle();
+    public String toString(){
+        return "";
+    }
+
+
+    public int cantidadPasos(){
+        return listaPasos.size();
+    }
 }

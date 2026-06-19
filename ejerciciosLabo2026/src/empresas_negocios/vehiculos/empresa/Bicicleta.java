@@ -1,10 +1,11 @@
 package empresas_negocios.vehiculos.empresa;
 
 import colores.Color;
+import empresas_negocios.vehiculos.Vehiculo;
 
 import java.time.LocalDate;
 
-public class Bicicleta extends Vehiculo{
+public class Bicicleta extends Vehiculo {
 
     public Bicicleta(Marca marca, String modelo, Color color, int cantRuedas, LocalDate fechaFabric) {
         super(marca, modelo, color, cantRuedas, fechaFabric);

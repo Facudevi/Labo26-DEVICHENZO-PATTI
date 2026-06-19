@@ -1,6 +1,5 @@
 package seres_vivos;
 import empresas_negocios.telefonia.Provincia;
-import tecnologia.Producto;
 
 import java.time.LocalDate;
 

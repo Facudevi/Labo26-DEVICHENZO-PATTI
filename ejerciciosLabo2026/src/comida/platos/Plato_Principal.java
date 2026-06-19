@@ -1,7 +1,7 @@
-package comida.recetas.platos;
+package comida.platos;
 
-import comida.recetas.Dificultad;
-import comida.recetas.Plato;
+import comida.Dificultad;
+import comida.Plato;
 
 public class Plato_Principal extends Plato {
     private int tiempoCoccion;
@@ -14,8 +14,8 @@ public class Plato_Principal extends Plato {
     }
 
     @Override
-    public void mostrarDetalle(){
-        System.out.println("Esta receta tarda en cocinarse +" + tiempoCoccion +
-                           " y los pasos son: " + getListaPasos());
+    public String toString(){
+        return "Esta receta tarda en cocinarse +" + tiempoCoccion +
+                " y los pasos son: " + getListaPasos();
     }
 }
