@@ -5,8 +5,13 @@ import comida.Plato;
 public class Entrada extends Plato {
     private Estado_Entrada estado;
 
-    public Entrada(String nombre, Dificultad dificultad, Estado_Entrada estado) {
-        super(nombre, dificultad);
+    public Entrada(String nombre, Dificultad dificultad, Tipo tipo, Estado_Entrada estado) {
+        super(nombre, dificultad, tipo);
+        this.estado = estado;
+    }
+
+    public Entrada(String nombre, double precio, Estado_Entrada estado) {
+        super(nombre, precio);
         this.estado = estado;
     }
 

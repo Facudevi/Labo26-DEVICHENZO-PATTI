@@ -1,11 +1,12 @@
 package canciones;
+import seres_vivos.Cantante;
 import seres_vivos.Persona;
 
 import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args){
-        Persona autor1 = new Persona("David", "Bowie", LocalDate.of(1947, 1, 8), "Street 1440");
+        Persona autor1 = new Cantante("David", "Bowie", LocalDate.of(1947, 1, 8));
 
         Cancion cancion1 = new Cancion("Starman", autor1);
         Cancion cancion2 = new Cancion("Under Pressure", autor1);

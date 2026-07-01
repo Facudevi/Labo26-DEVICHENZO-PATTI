@@ -1,6 +1,7 @@
 package sistemas.recetas;
 import comida.Dificultad;
 import comida.Plato;
+import comida.platos.Tipo;
 
 import java.util.ArrayList;
 
@@ -55,8 +56,12 @@ public class Sistema_Recetas {
     }
 
 
-    public void filtrarRecetas(){
-
+    public void filtrarRecetas(Tipo tipo){
+        for (Plato p : listaRecetas){
+            if (p.getTipo().equals(tipo)){
+                System.out.println(p);
+            }
+        }
     }
 
 
@@ -68,9 +73,11 @@ public class Sistema_Recetas {
     public Plato mayorCantidadPasos(){
         Plato mayor = null;
         for (Plato p : listaRecetas){
-            if(mayor == null )
+            if(mayor == null ) mayor = p;
+            else {
+                mayor = p.masCantidadDePasos(mayor);
+            }
         }
+        return mayor;
     }
-
-
 }

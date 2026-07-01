@@ -1,5 +1,6 @@
 package empresas_negocios.libreria;
 import fecha.Fecha;
+import seres_vivos.Autor;
 import seres_vivos.Persona;
 
 import java.time.LocalDate;
@@ -31,7 +32,7 @@ public class Libro {
     }
     public  Libro(String isbn,int cantidadHojas, Editorial editorial, Fecha fechaPublicacion){
         this.nombre = "las aventuras de pepe";
-        this.autor = new Persona("pepe","sanchez", LocalDate.of(1998, 4, 19),"Bolivia 3555");
+        this.autor = new Autor("pepe","sanchez", LocalDate.of(1998, 4, 19));
         this.isbn = isbn;
         this.cantidadHojas = cantidadHojas;
         this.editorial = editorial;

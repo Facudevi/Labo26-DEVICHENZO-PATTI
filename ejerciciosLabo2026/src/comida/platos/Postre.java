@@ -6,8 +6,14 @@ public class Postre extends Plato {
     private double temperatura;
     private boolean apto;
 
-    public Postre(String nombre, Dificultad dificultad, double temperatura, boolean apto) {
-        super(nombre, dificultad);
+    public Postre(String nombre, Dificultad dificultad, Tipo tipo, double temperatura, boolean apto) {
+        super(nombre, dificultad, tipo);
+        this.temperatura = temperatura;
+        this.apto = apto;
+    }
+
+    public Postre(String nombre, double precio, double temperatura, boolean apto) {
+        super(nombre, precio);
         this.temperatura = temperatura;
         this.apto = apto;
     }

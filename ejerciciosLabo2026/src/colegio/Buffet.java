@@ -1,6 +1,7 @@
 package colegio;
 import comida.Pedido;
 import comida.Plato;
+import comida.platos.Plato_Principal;
 import seres_vivos.Alumno;
 import seres_vivos.Profesor;
 
@@ -170,10 +171,10 @@ public class Buffet {
         Profesor profesor1 = new Profesor("Martin", "Barbieri", LocalDate.of(2003, 1, 1), "Libertador 1881", 15.5);
         Profesor profesor2 = new Profesor("Franco", "Callipo", LocalDate.of(2003, 2, 2), "Carabobo 1874", 10);
 
-        Plato plato1 = new Plato("Fideos", 6500);
-        Plato plato2 = new Plato("Arroz", 5000);
-        Plato plato3 = new Plato("Hamburguesa", 7000);
-        Plato plato4 = new Plato("Sandwich", 6500);
+        Plato plato1 = new Plato_Principal("Fideos", 6500, 20, 1);
+        Plato plato2 = new Plato_Principal("Arroz", 5000, 20, 1);
+        Plato plato3 = new Plato_Principal("Hamburguesa", 7000, 30, 1);
+        Plato plato4 = new Plato_Principal("Sandwich", 6500, 10, 1);
 
         Pedido pedido1 = new Pedido(LocalDate.of(2026, 5, 8), plato1, alumno2, LocalTime.of(12,5), true);
         Pedido pedido2 = new Pedido(LocalDate.of(2026, 5, 8), plato2, alumno1, LocalTime.of(17,0), false);
@@ -198,7 +199,7 @@ public class Buffet {
 
         System.out.println("\n-- PRUEBAS DE FUNCIONALIDAD --\n");
 
-        Plato plato5 = new Plato("Pizzeta", 3500);
+        Plato plato5 = new Plato_Principal("Pizzeta", 3500, 30, 1);
         System.out.println("-- AGREGAR PLATOS --");
         buffet.agregarPlato(plato1);
         buffet.agregarPlato(plato5);
