@@ -50,7 +50,7 @@ public class Sistema_Recetas {
     public void buscarPorDificultad(Dificultad dificultad){
         for(Plato p : listaRecetas){
             if (p.getDificultad().equals(dificultad)){
-                System.out.println(p);
+                System.out.println(p.getNombre());
             }
         }
     }
@@ -59,7 +59,7 @@ public class Sistema_Recetas {
     public void filtrarRecetas(Tipo tipo){
         for (Plato p : listaRecetas){
             if (p.getTipo().equals(tipo)){
-                System.out.println(p);
+                System.out.println(p.getNombre());
             }
         }
     }

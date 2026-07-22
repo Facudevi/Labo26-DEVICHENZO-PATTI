@@ -1,5 +1,4 @@
 package comida.platos;
-
 import comida.Dificultad;
 import comida.Plato;
 

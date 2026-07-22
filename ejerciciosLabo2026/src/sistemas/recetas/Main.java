@@ -1,8 +1,7 @@
-package comida.platos;
-
+package sistemas.recetas;
 import comida.Dificultad;
 import comida.Plato;
-import sistemas.recetas.Sistema_Recetas;
+import comida.platos.*;
 
 public class Main {
     public static void main(String[] args){
@@ -35,9 +34,9 @@ public class Main {
         sistema.filtrarRecetas(Tipo.T_PRINCIPAL);
 
         System.out.println("-- CANTIDAD DE RECETAS --");
-        sistema.cantidadRecetas();
+        System.out.println(sistema.cantidadRecetas());
 
         System.out.println("-- RECETA CON MÁS PASOS --");
-        sistema.mayorCantidadPasos();
+        System.out.println(sistema.mayorCantidadPasos().getNombre());
     }
 }
