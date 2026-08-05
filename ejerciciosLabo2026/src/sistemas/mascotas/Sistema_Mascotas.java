@@ -1,6 +1,6 @@
 package sistemas.mascotas;
 import seres_vivos.Duenio;
-import seres_vivos.Mascota;
+import seres_vivos.animales.Mascota;
 
 import java.util.ArrayList;
 

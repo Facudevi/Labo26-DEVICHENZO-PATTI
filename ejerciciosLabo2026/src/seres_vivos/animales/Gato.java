@@ -1,6 +1,8 @@
-package seres_vivos;
+package seres_vivos.animales;
 
-public class Gato extends Mascota{
+import seres_vivos.Duenio;
+
+public class Gato extends Mascota {
     public Gato(String nombre, Duenio duenio) {
         super(nombre, duenio);
     }

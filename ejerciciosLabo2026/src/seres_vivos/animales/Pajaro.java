@@ -1,6 +1,8 @@
-package seres_vivos;
+package seres_vivos.animales;
 
-public class Pajaro extends Mascota{
+import seres_vivos.Duenio;
+
+public class Pajaro extends Mascota {
     private boolean esCantor;
     private String canto;
 

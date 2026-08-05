@@ -1,4 +1,6 @@
-package seres_vivos;
+package seres_vivos.animales;
+
+import seres_vivos.Duenio;
 
 public class Pez extends Mascota {
     private int vidas = 10;

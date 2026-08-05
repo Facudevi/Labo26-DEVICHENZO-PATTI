@@ -1,4 +1,6 @@
-package seres_vivos;
+package seres_vivos.animales;
+
+import seres_vivos.Duenio;
 
 public abstract class Mascota {
     private String nombre;
