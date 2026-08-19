@@ -1,9 +1,10 @@
-package seres_vivos;
+package seres_vivos.humanos;
 import empresas_negocios.telefonia.Provincia;
+import seres_vivos.humanos.personas.Persona;
 
 import java.time.LocalDate;
 
-public class Empleado extends Persona{
+public class Empleado extends Persona {
     private int DNI;
     private String pais;
     private String numTel;

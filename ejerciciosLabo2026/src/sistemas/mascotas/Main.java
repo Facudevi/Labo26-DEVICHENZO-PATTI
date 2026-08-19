@@ -1,9 +1,9 @@
 package sistemas.mascotas;
-import seres_vivos.*;
 import seres_vivos.animales.Gato;
 import seres_vivos.animales.Pajaro;
 import seres_vivos.animales.Perro;
 import seres_vivos.animales.Pez;
+import seres_vivos.humanos.Duenio;
 
 public class Main {
     public static void main(String[] args) {

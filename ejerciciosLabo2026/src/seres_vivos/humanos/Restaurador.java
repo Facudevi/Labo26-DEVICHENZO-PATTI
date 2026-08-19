@@ -1,6 +1,7 @@
-package seres_vivos;
+package seres_vivos.humanos;
 import museo.Cuadro;
 import museo.Estado_Cuadro;
+import seres_vivos.humanos.personas.Persona;
 
 import java.time.LocalDate;
 

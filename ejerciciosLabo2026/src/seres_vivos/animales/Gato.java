@@ -1,6 +1,6 @@
 package seres_vivos.animales;
 
-import seres_vivos.Duenio;
+import seres_vivos.humanos.Duenio;
 
 public class Gato extends Mascota {
     public Gato(String nombre, Duenio duenio) {

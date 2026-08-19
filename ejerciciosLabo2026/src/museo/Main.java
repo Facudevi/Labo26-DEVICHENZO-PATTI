@@ -1,5 +1,5 @@
 package museo;
-import seres_vivos.Restaurador;
+import seres_vivos.humanos.Restaurador;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

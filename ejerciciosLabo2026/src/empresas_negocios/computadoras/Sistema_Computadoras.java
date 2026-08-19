@@ -1,6 +1,6 @@
 package empresas_negocios.computadoras;
 import pagos.Metodo_Pago;
-import seres_vivos.Cliente;
+import seres_vivos.humanos.Cliente;
 import tecnologia.Computadora;
 import tecnologia.componentes.Componente;
 

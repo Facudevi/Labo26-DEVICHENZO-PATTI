@@ -1,6 +1,8 @@
-package seres_vivos;
+package seres_vivos.humanos;
 import colegio.Division;
 import colegio.Materia;
+import seres_vivos.humanos.personas.PersonaEducativa;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 

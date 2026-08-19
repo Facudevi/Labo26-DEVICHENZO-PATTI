@@ -2,8 +2,8 @@ package colegio;
 import comida.Pedido;
 import comida.Plato;
 import comida.platos.Plato_Principal;
-import seres_vivos.Alumno;
-import seres_vivos.Profesor;
+import seres_vivos.humanos.Alumno;
+import seres_vivos.humanos.Profesor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

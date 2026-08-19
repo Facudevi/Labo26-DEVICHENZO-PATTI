@@ -1,6 +1,6 @@
 package ejercicios_basicos.ejerciciosArray;
-import seres_vivos.Persona;
-import seres_vivos.Persona_Normal;
+import seres_vivos.humanos.personas.Persona;
+import seres_vivos.humanos.personas.Persona_Normal;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

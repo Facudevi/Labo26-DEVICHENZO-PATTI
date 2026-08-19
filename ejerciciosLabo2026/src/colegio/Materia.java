@@ -1,5 +1,5 @@
 package colegio;
-import seres_vivos.Alumno;
+import seres_vivos.humanos.Alumno;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

@@ -1,5 +1,5 @@
 package empresas_negocios.telefonia;
-import seres_vivos.Empleado;
+import seres_vivos.humanos.Empleado;
 
 public class Internacional extends Llamada {
     private String codPaisDestino;

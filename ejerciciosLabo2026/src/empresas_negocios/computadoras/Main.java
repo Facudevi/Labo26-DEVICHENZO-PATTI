@@ -3,7 +3,7 @@ import pagos.Efectivo;
 import pagos.Metodo_Pago;
 import pagos.Tarjeta;
 import pagos.Tipo_Tarjeta;
-import seres_vivos.Cliente;
+import seres_vivos.humanos.Cliente;
 import tecnologia.Computadora;
 import tecnologia.componentes.hardware.CPU;
 import tecnologia.componentes.periferico.entrada.Mouse;

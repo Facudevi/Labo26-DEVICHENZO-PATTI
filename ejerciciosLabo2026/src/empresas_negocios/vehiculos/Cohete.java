@@ -1,5 +1,5 @@
 package empresas_negocios.vehiculos;
-import seres_vivos.Tecnico;
+import seres_vivos.humanos.Tecnico;
 import java.time.LocalDate;
 import java.util.Scanner;
 

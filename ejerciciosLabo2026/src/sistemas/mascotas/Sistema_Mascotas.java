@@ -1,5 +1,5 @@
 package sistemas.mascotas;
-import seres_vivos.Duenio;
+import seres_vivos.humanos.Duenio;
 import seres_vivos.animales.Mascota;
 
 import java.util.ArrayList;

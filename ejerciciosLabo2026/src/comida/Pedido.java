@@ -1,5 +1,5 @@
 package comida;
-import seres_vivos.PersonaEducativa;
+import seres_vivos.humanos.personas.PersonaEducativa;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

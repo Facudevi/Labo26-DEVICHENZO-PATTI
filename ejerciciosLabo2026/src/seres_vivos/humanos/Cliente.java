@@ -1,6 +1,8 @@
-package seres_vivos;
+package seres_vivos.humanos;
 
-public class Cliente extends Persona{
+import seres_vivos.humanos.personas.Persona;
+
+public class Cliente extends Persona {
     private String celular;
 
     public Cliente(String nombre, String apellido, String celular) {

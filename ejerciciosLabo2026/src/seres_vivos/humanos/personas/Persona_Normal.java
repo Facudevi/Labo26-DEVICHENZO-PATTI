@@ -1,4 +1,4 @@
-package seres_vivos;
+package seres_vivos.humanos.personas;
 
 import java.time.LocalDate;
 

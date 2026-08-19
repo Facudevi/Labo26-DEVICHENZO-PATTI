@@ -1,5 +1,5 @@
 package deporte;
-import seres_vivos.Jugador;
+import seres_vivos.humanos.Jugador;
 
 import java.time.LocalDate;
 
