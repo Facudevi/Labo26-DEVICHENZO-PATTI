@@ -34,7 +34,8 @@ public class Pez extends Mascota {
     public void saludar(Duenio nombreD) {
         if (this.getDuenio().equals(nombreD)) {
             this.vidas--;
-            System.out.println("El pez hace burbujitas. Vidas restantes: " + this.vidas);
+            System.out.println("El pez hace b" +
+                    "urbujitas. Vidas restantes: " + this.vidas);
         }
         else {
             this.vidas = 0;

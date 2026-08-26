@@ -11,8 +11,8 @@ public class Main {
         Duenio duenio1 = new Duenio("Carlos", "Gomez");
         Duenio duenio2 = new Duenio("Lucia", "Fernandez");
 
-        Perro perro = new Perro("Firulais", duenio1);
-        Gato gato = new Gato("Michi", duenio1);
+        Perro perro = new Perro("Firulais", duenio2);
+        Gato gato = new Gato("Michi", duenio2);
         Pajaro pajaro = new Pajaro("Pepe", duenio1, true, "cucu");
         Pez pez = new Pez("Nemo", duenio1);
 

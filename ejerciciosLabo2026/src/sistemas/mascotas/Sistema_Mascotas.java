@@ -5,7 +5,7 @@ import seres_vivos.animales.Mascota;
 import java.util.ArrayList;
 
 public class Sistema_Mascotas {
-    ArrayList<Mascota> listaM;
+    private ArrayList<Mascota> listaM;
 
     public Sistema_Mascotas() {
         this.listaM = new ArrayList<>();
@@ -16,7 +16,7 @@ public class Sistema_Mascotas {
         if (listaM.contains(nuevaMascota)) System.out.println("Error: Ya existe esta mascota en la lista");
         else {
             listaM.add(nuevaMascota);
-            System.out.println("Nombre mascota: " + nuevaMascota.getNombre() + " | Dueño: " + nuevaMascota.getDuenio() + " | Tipo: " + nuevaMascota.getTipo());
+            System.out.println("Nombre mascota: " + nuevaMascota.getNombre() + " | Dueño: " + nuevaMascota.getDuenio().getNombreCompleto() + " | Tipo: " + nuevaMascota.getTipo());
         }
     }
 

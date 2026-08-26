@@ -5,7 +5,7 @@ import seres_vivos.humanos.Duenio;
 public abstract class Mascota {
     private String nombre;
     private Duenio duenio;
-    private int alegria = 1;
+    private static int alegria = 1;
 
     public Mascota(String nombre, Duenio duenio){
         this.nombre = nombre;
