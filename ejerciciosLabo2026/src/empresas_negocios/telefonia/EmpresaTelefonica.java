@@ -177,7 +177,7 @@ public class EmpresaTelefonica {
         return false;
     }
 
-    public boolean existeDni(int dni) {
+    public boolean existeDni(String dni) {
         for (Empleado empleado : listaEmpleado) {
             if (empleado.tieneMismoDniQue(dni)) {
                 return true;

@@ -6,7 +6,7 @@ public abstract class Drone {
     private String nModelo;
     private LocalDate fechaAdq;
     private int bateria;
-    private static int contador = 0;
+    private static int contador  = 0;
     private EstadoDrone estado;
     private int id;
 
@@ -18,8 +18,8 @@ public abstract class Drone {
         this.fechaAdq = fechaAdq;
         this.bateria = bateria;
         this.estado = estado;
-        contador++;
         this.id = contador;
+        contador++;
     }
 
     public String getnModelo() { return nModelo; }

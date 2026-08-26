@@ -17,19 +17,52 @@ public class Persona_Bebida extends Persona{
     public ArrayList<Integer> getCantidad() { return cantidad; }
 
 
-    public void calcularCoeficiente(){
-        double resutado;
-        double pos, neg;
+    public void mostrarCoeficiente(){
+        double res = 0;
 
-        System.out.println(getNombreCompleto() + " consumió:");
+        System.out.println(this.getNombreCompleto() + " consumió:");
         for (int i=0; i < cantidad.size(); i++){
             System.out.println(cantidad.get(i) + " " + lista_bebida.get(i).getNombre());
         }
 
+        res = calcularCoeficiente();
+        System.out.println("Coeficiente de " + this.getNombreCompleto() + ": " + res);
+    }
+
+
+    public double calcularCoeficiente(){
+        double resultado = 0;
+        double pos, neg;
+
         for (int i=0; i < cantidad.size(); i++){
             pos = lista_bebida.get(i).calcular_positividad();
             neg = lista_bebida.get(i).calcular_negatividad();
-            resultado = cantidad.get()
+            resultado += cantidad.get(i)*(pos - neg);
+        }
+        return resultado;
+    }
+
+
+    public Persona_Bebida maxCoef(Persona_Bebida personaMax){
+        if(this.calcularCoeficiente() > personaMax.calcularCoeficiente()) return this;
+        return personaMax;
+    }
+
+
+    public Persona_Bebida minCoef(Persona_Bebida personaMin){
+        if(this.calcularCoeficiente() < personaMin.calcularCoeficiente()) return this;
+        return personaMin;
+    }
+
+
+    public void elegirBebida (Bebida bebida, int cant) {
+        int indice = lista_bebida.indexOf(bebida);
+        if(indice == -1){
+            lista_bebida.add(bebida);
+            cantidad.add(cant);
+        }
+        else{
+            cantidad.set(indice, cantidad.get(indice) + cant);
         }
     }
 }

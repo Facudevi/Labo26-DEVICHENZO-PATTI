@@ -3,8 +3,8 @@ package bebidas;
 public class Alcoholica extends Bebida {
     private int cant_alcohol;
 
-    public Alcoholica(String nombre, double coef_pos, double coef_neg, int cant_alcohol) {
-        super(nombre, coef_pos, coef_neg);
+    public Alcoholica(String nombre, int cant_alcohol) {
+        super(nombre, 0, 0);
         this.cant_alcohol = cant_alcohol;
     }
 
@@ -14,5 +14,5 @@ public class Alcoholica extends Bebida {
 
 
     @Override
-    public double calcular_negatividad() { return (getCoef_neg() * 20); }
+    public double calcular_negatividad() { return (cant_alcohol * 20); }
 }

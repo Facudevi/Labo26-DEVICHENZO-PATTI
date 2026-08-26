@@ -5,7 +5,6 @@ import seres_vivos.humanos.personas.Persona;
 import java.time.LocalDate;
 
 public class Empleado extends Persona {
-    private int DNI;
     private String pais;
     private String numTel;
     private Provincia provincia;
@@ -13,8 +12,7 @@ public class Empleado extends Persona {
     private String franjaHoraria;
 
     public Empleado(String nombre, String apellido, LocalDate fecha, String direccion, int DNI, String pais, String numTel, Provincia provincia, String codigoPais, String franjaHoraria) {
-        super(nombre, apellido, fecha, direccion);
-        this.DNI = DNI;
+        super(nombre, apellido, fecha, direccion, String.valueOf(DNI));
         this.pais = pais;
         this.numTel = numTel;
         this.provincia = provincia;
@@ -22,7 +20,6 @@ public class Empleado extends Persona {
         this.franjaHoraria = franjaHoraria;
     }
 
-    public int getDNI() { return DNI; }
     public String getPais() { return pais; }
     public String getNumTel() { return numTel; }
     public Provincia getProvincia() {
@@ -35,7 +32,6 @@ public class Empleado extends Persona {
         return franjaHoraria;
     }
 
-    public void setDNI(int DNI) { this.DNI = DNI; }
     public void setPais(String pais) { this.pais = pais; }
     public void setNumTel(String numTel) { this.numTel = numTel; }
     public void setProvincia(Provincia provincia) { this.provincia = provincia; }
@@ -46,8 +42,8 @@ public class Empleado extends Persona {
         return this.numTel.equals(telefono);
     }
 
-    public boolean tieneMismoDniQue(int dni) {
-        return this.getDNI()==(dni);
+    public boolean tieneMismoDniQue(String dni) {
+        return this.getDNI().equals(dni);
     }
 
     public boolean viveEnElMismoPaisQue(Empleado otroEmpleado) {

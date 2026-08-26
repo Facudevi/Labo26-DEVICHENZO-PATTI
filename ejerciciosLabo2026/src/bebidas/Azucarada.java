@@ -3,8 +3,8 @@ package bebidas;
 public class Azucarada extends Bebida{
     private int cant_azucar;
 
-    public Azucarada(String nombre, double coef_pos, double coef_neg, int cant_azucar) {
-        super(nombre, coef_pos, coef_neg);
+    public Azucarada(String nombre, int cant_azucar) {
+        super(nombre, 1, 0);
         this.cant_azucar = cant_azucar;
     }
 
@@ -14,5 +14,5 @@ public class Azucarada extends Bebida{
 
 
     @Override
-    public double calcular_negatividad() { return (getCoef_neg() * 10); }
+    public double calcular_negatividad() { return (cant_azucar * 10); }
 }

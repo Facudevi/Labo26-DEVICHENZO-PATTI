@@ -25,6 +25,14 @@ public abstract class Persona {
         this.fecha = fecha;
     }
 
+    public Persona(String nombre, String apellido, LocalDate fecha, String direccion, String DNI){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fecha = fecha;
+        this.direccion = direccion;
+        this.DNI = DNI;
+    }
+
     public Persona(String nombre, String apellido, String DNI){
         this.nombre = nombre;
         this.apellido = apellido;
