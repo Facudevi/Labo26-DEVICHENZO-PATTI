@@ -23,16 +23,11 @@ public class Sistema_Mediciones {
     }
 
 
-    public void existePersona(Persona_Medida p){
+    public void registrarMedicion(Persona_Medida p, LocalDate fecha, double peso, int altura){
         if (!listaPersonas.contains(p)){
             System.out.println("La persona no se encuentra en el sistema");
         }
-    }
-
-
-    public void registrarMedicion(Persona_Medida p, LocalDate fecha, double peso, int altura){
-        existePersona(p);
-        if (p.comprobarFecha(fecha)){
+        else if (p.comprobarFecha(fecha)){
             System.out.println("El peso ya se registró antes");
         }
         else {
