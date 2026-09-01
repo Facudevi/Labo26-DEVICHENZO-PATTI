@@ -11,7 +11,4 @@ public class Medicion {
 
     public double getPeso() { return peso; }
     public int getAltura() { return altura; }
-
-    public void setPeso(double peso) { this.peso = peso; }
-    public void setAltura(int altura) { this.altura = altura; }
 }
