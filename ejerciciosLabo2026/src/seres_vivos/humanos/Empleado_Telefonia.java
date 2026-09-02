@@ -4,14 +4,14 @@ import seres_vivos.humanos.personas.Persona;
 
 import java.time.LocalDate;
 
-public class Empleado extends Persona {
+public class Empleado_Telefonia extends Persona {
     private String pais;
     private String numTel;
     private Provincia provincia;
     private String codigoPais;
     private String franjaHoraria;
 
-    public Empleado(String nombre, String apellido, LocalDate fecha, String direccion, int DNI, String pais, String numTel, Provincia provincia, String codigoPais, String franjaHoraria) {
+    public Empleado_Telefonia(String nombre, String apellido, LocalDate fecha, String direccion, int DNI, String pais, String numTel, Provincia provincia, String codigoPais, String franjaHoraria) {
         super(nombre, apellido, fecha, direccion, String.valueOf(DNI));
         this.pais = pais;
         this.numTel = numTel;
@@ -46,7 +46,7 @@ public class Empleado extends Persona {
         return this.getDNI().equals(dni);
     }
 
-    public boolean viveEnElMismoPaisQue(Empleado otroEmpleado) {
+    public boolean viveEnElMismoPaisQue(Empleado_Telefonia otroEmpleado) {
         return this.pais.equalsIgnoreCase(otroEmpleado.pais);
     }
 }

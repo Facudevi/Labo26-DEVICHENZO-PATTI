@@ -73,7 +73,7 @@ public class Persona_Medida extends Persona{
         double pesoInicial = medicionInicial.getPeso();
         double pesoFinal = medicionFinal.getPeso();
 
-        return ((pesoInicial - pesoFinal) / pesoInicial) * 100;
+        return ((pesoFinal - pesoInicial) / pesoInicial) * 100;
     }
 
 
@@ -89,7 +89,7 @@ public class Persona_Medida extends Persona{
         double alturaInicial = medicionInicial.getAltura();
         double alturaFinal = medicionFinal.getAltura();
 
-        return ((alturaInicial - alturaFinal) / alturaInicial) * 100;
+        return ((alturaFinal - alturaInicial) / alturaInicial) * 100;
     }
 
 
@@ -98,7 +98,7 @@ public class Persona_Medida extends Persona{
         double pesoMax = -1;
         for (Map.Entry<LocalDate, Medicion> entry : medida.entrySet()){
             double pesoActual = entry.getValue().getPeso();
-            if (pesoActual > pesoMax){
+            if (fechaMayor == null || pesoActual > pesoMax){
                 pesoMax = pesoActual;
                 fechaMayor = entry.getKey();
             }

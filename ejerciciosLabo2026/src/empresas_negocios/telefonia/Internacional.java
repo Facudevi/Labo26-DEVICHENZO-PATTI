@@ -1,5 +1,5 @@
 package empresas_negocios.telefonia;
-import seres_vivos.humanos.Empleado;
+import seres_vivos.humanos.Empleado_Telefonia;
 
 public class Internacional extends Llamada {
     private String codPaisDestino;
@@ -7,7 +7,7 @@ public class Internacional extends Llamada {
     private double costoPorMinuto;
     private double cargoInternacional;
 
-    public Internacional(Empleado empleadoOrigen, Empleado empleadoDestino, int duracion, String codigoPaisDestino, String franjaHoraria) {
+    public Internacional(Empleado_Telefonia empleadoOrigen, Empleado_Telefonia empleadoDestino, int duracion, String codigoPaisDestino, String franjaHoraria) {
         super(empleadoOrigen, empleadoDestino, duracion);
         this.codPaisDestino = codigoPaisDestino;
         this.franjaHoraria = franjaHoraria;
@@ -44,7 +44,7 @@ public class Internacional extends Llamada {
     }
 
     @Override
-    public int obtenerMinutosAlExteriorDe(Empleado empleado) {
+    public int obtenerMinutosAlExteriorDe(Empleado_Telefonia empleado) {
         if (fueRealizadaPor(empleado)) {
             return getDuracion();
         }

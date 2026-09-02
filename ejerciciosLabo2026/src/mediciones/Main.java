@@ -26,7 +26,7 @@ public class Main {
         System.out.println("-- CONSULTAS PUNTUALES POR FECHA --");
         Medicion m1 = p1.medicionFechaPerticular(fecha1);
         if (m1 != null) System.out.println("Peso: " + m1.getPeso() + "kg | Altura: " + m1.getAltura() + "cm");
-        else System.out.println("No hay mediciones registradas para la fecha " + LocalDate.now());
+        else System.out.println("No hay mediciones registradas para la fecha " + fecha1);
 
 
         Medicion m2 = p1.medicionFechaPerticular(fecha5);

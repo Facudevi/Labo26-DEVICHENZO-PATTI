@@ -1,28 +1,28 @@
 package empresas_negocios.telefonia;
-import seres_vivos.humanos.Empleado;
+import seres_vivos.humanos.Empleado_Telefonia;
 
 import java.time.LocalDateTime;
 
 public abstract class Llamada {
-    private Empleado empleadoOrigen;
-    private Empleado empleadoDestino;
+    private Empleado_Telefonia empleadoOrigen;
+    private Empleado_Telefonia empleadoDestino;
     private LocalDateTime fechaLlamada;
     private int duracion;
 
-    public Llamada(Empleado empleadoOrigen, Empleado empleadoDestino, int duracion) {
+    public Llamada(Empleado_Telefonia empleadoOrigen, Empleado_Telefonia empleadoDestino, int duracion) {
         this.empleadoOrigen = empleadoOrigen;
         this.empleadoDestino = empleadoDestino;
         this.duracion = duracion;
         this.fechaLlamada = LocalDateTime.now();
     }
 
-    public Empleado getEmpleadoOrigen() { return empleadoOrigen; }
-    public Empleado getEmpleadoDestino() { return empleadoDestino; }
+    public Empleado_Telefonia getEmpleadoOrigen() { return empleadoOrigen; }
+    public Empleado_Telefonia getEmpleadoDestino() { return empleadoDestino; }
     public LocalDateTime getFechaLlamada() { return fechaLlamada; }
     public int getDuracion() { return duracion; }
 
-    public void setEmpleadoOrigen(Empleado empleadoOrigen) { this.empleadoOrigen = empleadoOrigen; }
-    public void setEmpleadoDestino(Empleado empleadoDestino) { this.empleadoDestino = empleadoDestino; }
+    public void setEmpleadoOrigen(Empleado_Telefonia empleadoOrigen) { this.empleadoOrigen = empleadoOrigen; }
+    public void setEmpleadoDestino(Empleado_Telefonia empleadoDestino) { this.empleadoDestino = empleadoDestino; }
     public void setFechaLlamada(LocalDateTime fechaLlamada) { this.fechaLlamada = fechaLlamada; }
     public void setDuracion(int duracion) { this.duracion = duracion; }
 
@@ -33,7 +33,7 @@ public abstract class Llamada {
         return false;
     }
 
-    public boolean fueRealizadaPor(Empleado empleado) {
+    public boolean fueRealizadaPor(Empleado_Telefonia empleado) {
         return empleadoOrigen.tieneMismoDniQue(empleado.getDNI());
     }
 
@@ -45,7 +45,7 @@ public abstract class Llamada {
                 + " | Costo: $" + calcularCosto();
     }
 
-    public int obtenerMinutosAlExteriorDe(Empleado empleado) {
+    public int obtenerMinutosAlExteriorDe(Empleado_Telefonia empleado) {
         return 0;
     }
 }

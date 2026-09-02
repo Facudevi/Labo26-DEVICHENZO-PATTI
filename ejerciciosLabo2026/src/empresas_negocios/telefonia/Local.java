@@ -1,12 +1,12 @@
 package empresas_negocios.telefonia;
-import seres_vivos.humanos.Empleado;
+import seres_vivos.humanos.Empleado_Telefonia;
 
 public class Local extends Llamada{
     private Provincia provOrigen;
     private Provincia provDestino;
     private double costoPorMinuto;
 
-    public Local(Empleado empleadoOrigen, Empleado empleadoDestino, int duracion, Provincia provOrigen, Provincia provDestino) {
+    public Local(Empleado_Telefonia empleadoOrigen, Empleado_Telefonia empleadoDestino, int duracion, Provincia provOrigen, Provincia provDestino) {
         super(empleadoOrigen, empleadoDestino, duracion);
         this.provOrigen = provOrigen;
         this.provDestino = provDestino;
