@@ -1,8 +1,7 @@
 package sistemas.asistencias;
-import fecha.Dia;
 import seres_vivos.humanos.Empleado;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 
 public class Sistema_Asistencias {
@@ -32,7 +31,10 @@ public class Sistema_Asistencias {
     }
 
 
-    public void registrarIngreso(Empleado emp, LocalTime fechaHoraIngreso){
-        if (!listaEmpleados.contains(emp)) System.out.println("");
+    public void registrarIngreso(Empleado emp, LocalDateTime fechaHoraIngreso){
+        if (!listaEmpleados.contains(emp)) System.out.println("No se encuentra el empleado");
+        else {
+            emp.agregarRegistro(fechaHoraIngreso);
+        }
     }
 }

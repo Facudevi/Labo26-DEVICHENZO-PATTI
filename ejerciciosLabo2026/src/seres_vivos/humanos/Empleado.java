@@ -37,5 +37,12 @@ public class Empleado extends Persona {
     }
 
 
-
+    public void agregarRegistro(LocalDateTime fhIngreso){
+        if (!fhIngreso.getDayOfWeek().equals(Dia.values())){
+            System.out.println("No coinicide la fecha con los días de asistencia habilitados");
+        }
+        else {
+            listaAsistencia.add(fhIngreso);
+        }
+    }
 }
