@@ -38,7 +38,7 @@ public class Empleado extends Persona {
     }
 
 
-    public boolean coincideFecha(LocalDate fecha) {
+    public boolean coincideFecha(LocalDateTime fecha) {
         DayOfWeek diaSemana = fecha.getDayOfWeek();
         for (Dia d : diaAsistencia) {
             if (d.getDiaN() == diaSemana.getValue()) {
@@ -50,7 +50,7 @@ public class Empleado extends Persona {
 
 
     public void agregarRegistro(LocalDateTime fechaHora){
-        if (!coincideFecha(fechaHora.toLocalDate())) {
+        if (!coincideFecha(fechaHora)) {
             System.out.println("El empleado no tiene asignado trabajar ese día");
         }
         else if (listaAsistencia.contains(fechaHora)) {
@@ -76,7 +76,7 @@ public class Empleado extends Persona {
         int diasDelMes = fechaInicio.lengthOfMonth();
 
         for (int i = 1; i <= diasDelMes; i++) {
-            LocalDate diaActual = LocalDate.of(anio, mes, i);
+            LocalDateTime diaActual = LocalDateTime.of(anio, mes, i, 0, 0);
             if (coincideFecha(diaActual)) {
                 contador++;
             }
