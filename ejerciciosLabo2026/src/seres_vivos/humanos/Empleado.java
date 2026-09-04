@@ -2,6 +2,7 @@ package seres_vivos.humanos;
 import fecha.Dia;
 import seres_vivos.humanos.personas.Persona;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -13,7 +14,7 @@ public class Empleado extends Persona {
     private HashSet<LocalDateTime> listaAsistencia;
     private static int contador = 1;
 
-    public Empleado(String nombre, String apellido, LocalDate fecha, int legajo, String telefono) {
+    public Empleado(String nombre, String apellido, LocalDate fecha, String telefono) {
         super(nombre, apellido, fecha);
         this.legajo = contador;
         this.telefono = telefono;
@@ -37,12 +38,50 @@ public class Empleado extends Persona {
     }
 
 
-    public void agregarRegistro(LocalDateTime fhIngreso){
-        if (!fhIngreso.getDayOfWeek().equals(Dia.values())){
-            System.out.println("No coinicide la fecha con los días de asistencia habilitados");
+    public boolean coincideFecha(LocalDate fecha) {
+        DayOfWeek diaSemana = fecha.getDayOfWeek();
+        for (Dia d : diaAsistencia) {
+            if (d.getDiaN() == diaSemana.getValue()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public void agregarRegistro(LocalDateTime fechaHora){
+        if (!coincideFecha(fechaHora.toLocalDate())) {
+            System.out.println("El empleado no tiene asignado trabajar ese día");
+        }
+        else if (listaAsistencia.contains(fechaHora)) {
+            System.out.println("Ya existe un registro de ingreso para esta fecha y hora");
         }
         else {
-            listaAsistencia.add(fhIngreso);
+            listaAsistencia.add(fechaHora);
+            System.out.println("Ingreso registrado correctamente");
         }
+    }
+
+
+    public double calcularPorcentaje(int mes, int anio){
+        int asistencia = 0, contador = 0;
+
+        for (LocalDateTime fecha : listaAsistencia){
+            if (fecha.getMonthValue() == mes && fecha.getYear() == anio){
+                asistencia ++;
+            }
+        }
+
+        LocalDate fechaInicio = LocalDate.of(anio, mes, 1);
+        int diasDelMes = fechaInicio.lengthOfMonth();
+
+        for (int i = 1; i <= diasDelMes; i++) {
+            LocalDate diaActual = LocalDate.of(anio, mes, i);
+            if (coincideFecha(diaActual)) {
+                contador++;
+            }
+        }
+
+        return ((double)asistencia * 100) / contador;
     }
 }

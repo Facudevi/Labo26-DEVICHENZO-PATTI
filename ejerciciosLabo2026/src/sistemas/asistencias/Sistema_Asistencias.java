@@ -2,6 +2,7 @@ package sistemas.asistencias;
 import seres_vivos.humanos.Empleado;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Sistema_Asistencias {
@@ -22,12 +23,12 @@ public class Sistema_Asistencias {
 
 
     public Empleado buscarNumLegajo(int legajo){
-        Empleado empLejago = null;
-        for (Empleado e : listaEmpleados){
-            if (e.getLegajo() == legajo) empLejago = e;
+        for (Empleado e : listaEmpleados) {
+            if (e.getLegajo() == legajo) {
+                return e;
+            }
         }
-        if (empLejago == null) System.out.println("No existe empleado con este legajo");
-        return empLejago;
+        return null;
     }
 
 
@@ -36,5 +37,23 @@ public class Sistema_Asistencias {
         else {
             emp.agregarRegistro(fechaHoraIngreso);
         }
+    }
+
+
+    public void porcentajeAsistencia(Empleado emp, int mes, int anio){
+        if (!listaEmpleados.contains(emp)) System.out.println("El empleado no se encuentra en la lista");
+        else {
+            double porcentaje = emp.calcularPorcentaje(mes, anio);
+            System.out.println("El porcentaje de asistencia de " + emp.getNombreCompleto() + " fue del " + porcentaje + "%");
+        }
+    }
+
+
+    public ArrayList<Empleado> obtenerEmpleadosPorcentaje(int mes, int anio){
+        ArrayList<Empleado> lista = new ArrayList<>();
+        for (Empleado e : listaEmpleados){
+            if(e.calcularPorcentaje(mes, anio) > 80) lista.add(e);
+        }
+        return lista;
     }
 }
