@@ -16,7 +16,4 @@ public class Plato_Familia {
     public String getNombre() { return nombre; }
     public HashSet<String> getIngredientes() { return ingredientes; }
     public int getCantCalorias() { return cantCalorias; }
-
-
-
 }

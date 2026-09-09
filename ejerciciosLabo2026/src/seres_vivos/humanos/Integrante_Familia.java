@@ -26,10 +26,45 @@ public class Integrante_Familia extends Persona {
     }
 
 
-    public int obtenerCalorias(){
-        int suma = 0;
+    public double obtenerCalorias(){
+        double suma = 0;
         for (Map.Entry<Plato_Familia, Integer> entry : platosConsumidos.entrySet()){
-            
+            suma += entry.getKey().getCantCalorias() * entry.getValue();
         }
+        return suma;
+    }
+
+
+    public int cantidadPlatos(){
+        int cant = 0;
+        for (Map.Entry<Plato_Familia, Integer> entry : platosConsumidos.entrySet()){
+            cant += entry.getValue();
+        }
+        return cant;
+    }
+
+
+    public double promedioPersona(){
+        return obtenerCalorias() / cantidadPlatos();
+    }
+
+
+    public boolean tienePlato(Plato_Familia p){
+        if (platosConsumidos.containsKey(p)) return true;
+        return false;
+    }
+
+
+    public Plato_Familia platoPreferido() {
+        Plato_Familia preferido = null;
+        int maxCantidad = 0;
+
+        for (Map.Entry<Plato_Familia, Integer> entry : platosConsumidos.entrySet()) {
+            if (entry.getValue() > maxCantidad) {
+                maxCantidad = entry.getValue();
+                preferido = entry.getKey();
+            }
+        }
+        return preferido;
     }
 }
