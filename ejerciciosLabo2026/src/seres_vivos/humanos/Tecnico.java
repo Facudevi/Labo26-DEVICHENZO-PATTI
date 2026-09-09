@@ -1,5 +1,5 @@
 package seres_vivos.humanos;
-import empresas_negocios.vehiculos.Cohete;
+import vehiculos.Cohete;
 import seres_vivos.humanos.personas.Persona;
 
 import java.time.LocalDate;

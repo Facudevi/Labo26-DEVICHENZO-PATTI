@@ -58,7 +58,6 @@ public class Integrante_Familia extends Persona {
     public Plato_Familia platoPreferido() {
         Plato_Familia preferido = null;
         int maxCantidad = 0;
-
         for (Map.Entry<Plato_Familia, Integer> entry : platosConsumidos.entrySet()) {
             if (entry.getValue() > maxCantidad) {
                 maxCantidad = entry.getValue();
