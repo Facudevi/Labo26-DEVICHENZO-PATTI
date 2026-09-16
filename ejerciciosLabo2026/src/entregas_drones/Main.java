@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        Carga droneCarga = new Carga("Dron-Carga-1", LocalDate.of(2023, 5, 10), 100, EstadoDrone.OPERATIVO, 1, 30);
-        Vigilancia droneVigi = new Vigilancia("Dron-Vigilancia-1", LocalDate.of(2026, 2,7), 50, EstadoDrone.INACTIVO, 1, 100);
+        Carga droneCarga = new Carga("Dron-Carga-1", LocalDate.of(2023, 5, 10), Bateria.CIEN, EstadoDrone.OPERATIVO, 1, 30);
+        Vigilancia droneVigi = new Vigilancia("Dron-Vigilancia-1", LocalDate.of(2026, 2,7), Bateria.CINCUENTA, EstadoDrone.INACTIVO, 1, 100);
 
 
         System.out.println("-- PRUEBA DE RASTREO --");
@@ -28,7 +28,7 @@ public class Main {
         droneCarga.recargar();
         System.out.println("Batería luego de recargar normalmente: " + droneCarga.getBateria() + "%");
 
-        droneCarga.setBateria(15);
+        droneCarga.setBateria(Bateria.DIEZ);
         System.out.println("Batería actual: " + droneCarga.getBateria() + "%");
         droneCarga.recargar();
         System.out.println("Batería luego de recargar en estado crítico: " + droneCarga.getBateria() + "%");
