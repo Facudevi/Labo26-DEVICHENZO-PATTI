@@ -20,4 +20,9 @@ public class Sensor_Presion extends SensorIndividual {
     public void imprimirAlarma(){
         System.out.println("Sensor de presión activado");
     }
+
+    @Override
+    public String getTipo() {
+        return super.getTipo() + " | Sensor Presión";
+    }
 }

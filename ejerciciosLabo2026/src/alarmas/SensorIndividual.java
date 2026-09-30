@@ -26,4 +26,9 @@ public class SensorIndividual extends Sensor{
 
     @Override
     public void imprimirAlarma(){}
+
+    @Override
+    public String getTipo() {
+        return "Sensor INDIVIDUAL";
+    }
 }

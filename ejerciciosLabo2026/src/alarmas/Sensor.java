@@ -12,4 +12,5 @@ public abstract class Sensor {
     public boolean isConectado(){ return true; }
     public void dispararAlarma(){}
     public void imprimirAlarma(){}
+    public abstract String getTipo();
 }

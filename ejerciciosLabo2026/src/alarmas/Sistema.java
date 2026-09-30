@@ -1,13 +1,16 @@
 package alarmas;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Sistema {
     private ArrayList<Sensor> listaSensores;
 
     public Sistema() {
         this.listaSensores = new ArrayList<>();
+    }
+
+    public ArrayList<Sensor> getListaSensores() {
+        return listaSensores;
     }
 
     public void agregarSensor(Sensor s) { listaSensores.add(s); }
@@ -23,10 +26,10 @@ public class Sistema {
         }
     }
 
-    public int obtenerLongitud(){ return listaSensores.size(); }
+    public int obtenerLongitud(){ return listaSensores.size()-1; }
 
     public boolean comprobarSensor (int numSensor){
-        if(numSensor < obtenerLongitud() && numSensor > 0) return true;
+        if(numSensor < obtenerLongitud() && numSensor >= 0) return true;
         return false;
     }
 

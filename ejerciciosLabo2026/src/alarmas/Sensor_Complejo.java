@@ -33,4 +33,9 @@ public class Sensor_Complejo extends Sensor{
 
     @Override
     public void imprimirAlarma() { System.out.println("Alerta: El promedio superó el umbral."); }
+
+    @Override
+    public String getTipo() {
+        return "Sensor COMPLEJO";
+    }
 }

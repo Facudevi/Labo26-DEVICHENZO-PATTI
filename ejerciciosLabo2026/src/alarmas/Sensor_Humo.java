@@ -20,4 +20,9 @@ public class Sensor_Humo extends SensorIndividual {
     public void imprimirAlarma(){
         System.out.println("Se están llamando a los bomberos");
     }
+
+    @Override
+    public String getTipo() {
+        return super.getTipo() + " | Sensor Humo";
+    }
 }

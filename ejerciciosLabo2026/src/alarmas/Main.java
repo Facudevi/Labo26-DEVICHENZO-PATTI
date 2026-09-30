@@ -1,6 +1,7 @@
 package alarmas;
 
 import java.time.LocalDate;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -17,6 +18,7 @@ public class Main {
         miGrupo.agregar(temp);
         miGrupo.agregar(pres);
 
+
         miSistema.agregarSensor(humo);
         miSistema.agregarSensor(temp);
         miSistema.agregarSensor(pres);
@@ -26,7 +28,22 @@ public class Main {
         miSistema.recorrerAlarma();
 
         System.out.println("Ingrese un numero del 0 al " + miSistema.obtenerLongitud() + " para conocer informacion respecto a una sensor: ");
-        int num = entrada.nextInt();
-        
+
+
+        boolean estado = true;
+        while (estado) {
+            try {
+                int num = entrada.nextInt();
+                System.out.println(miSistema.getListaSensores().get(num).getTipo());
+                estado = false;
+            } catch (InputMismatchException e) {
+                System.out.println("Error: " + e.getMessage());
+                entrada.next();
+                System.out.println("Volver a poner numero: ");
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("Error: " + e.getMessage());
+                System.out.println("Volver a poner numero: ");
+            }
+        }
     }
 }

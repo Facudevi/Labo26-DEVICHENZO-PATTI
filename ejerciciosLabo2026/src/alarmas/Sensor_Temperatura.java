@@ -20,4 +20,9 @@ public class Sensor_Temperatura extends SensorIndividual {
     public void imprimirAlarma(){
         System.out.println("¡Cuidado! La temperatura sube");
     }
+
+    @Override
+    public String getTipo() {
+        return super.getTipo() + " | Sensor Temperatura";
+    }
 }
