@@ -27,10 +27,4 @@ public class Sistema {
     }
 
     public int obtenerLongitud(){ return listaSensores.size()-1; }
-
-    public boolean comprobarSensor (int numSensor){
-        if(numSensor < obtenerLongitud() && numSensor >= 0) return true;
-        return false;
-    }
-
 }
