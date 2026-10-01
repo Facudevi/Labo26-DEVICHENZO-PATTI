@@ -23,21 +23,18 @@ public class Sistema_Computadoras {
     }
 
 
-    public void realizarCompra(Cliente cliente, Computadora comp, Metodo_Pago pago) {
+    public void realizarCompra(Cliente cliente, Computadora comp, Metodo_Pago pago) throws SinStockException, NoIncluyeException{
         if (!comp.cumpleMinimoCompra()) {
-            System.out.println("ERROR: No se cumple la compra mínima (Falta CPU, un dispositivo de Entrada o de Salida).\n");
-            return;
+            throw new NoIncluyeException("ERROR: No se cumple la compra mínima (Falta CPU, un dispositivo de Entrada o de Salida)");
         }
 
         if (comp.getCpu().getStock() <= 0) {
-            System.out.println("ERROR: No hay stock disponible para la CPU elegida.\n");
-            return;
+            throw new SinStockException("ERROR: No hay stock disponible para la CPU elegida");
         }
 
         for (Componente c : comp.getPerifericos()) {
             if (c.getStock() <= 0) {
-                System.out.println("ERROR: No hay suficiente stock del componente: " + c.getNombreComponente() + "\n");
-                return;
+                throw new SinStockException("ERROR: No hay suficiente stock del componente: " + c.getNombreComponente());
             }
         }
 

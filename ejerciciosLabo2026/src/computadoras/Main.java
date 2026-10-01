@@ -18,6 +18,7 @@ public class Main {
 
         CPU cpu1 = new CPU("Intel", "i7 12700K", 400.0, 5);
         CPU cpu2 = new CPU("AMD", "Ryzen 5 5600X", 250.0, 10);
+        CPU cpu3 = new CPU("AMD", "Ryzen 4 5600X", 100.0, 0);
 
         Teclado teclado1 = new Teclado("Logitech", "G213", 60.0, 4, "USB", 1);
         Mouse mouse1 = new Mouse("Razer", "Deathadder", 40.0, 8, "USB", 1);
@@ -60,10 +61,20 @@ public class Main {
 
         tienda.realizarCompra(cliente2, pc2, pago2);
 
-        System.out.println("\nIntentando comprar sin cumplir periféricos mínimos:");
+
+
         Computadora pc3 = new Computadora(cpu1);
         pc3.agregarPeriferico(teclado1);
-        tienda.realizarCompra(cliente1, pc3, pago1);
+        try {
+            System.out.println("\nIntentando comprar sin cumplir periféricos mínimos:");
+            tienda.realizarCompra(cliente1, pc3, pago1);
+        } catch (NoIncluyeException e){
+            System.out.println(e.getMessage());
+        } catch (SinStockException e) {
+            System.out.println(e.getMessage());
+        }
+
+
 
         System.out.println("\n-- CALCULAR PRECIO TOTAL DE LA COMPUTADORA --");
         double precio1 = pc1.calcularPrecioComponentes();
@@ -88,5 +99,19 @@ public class Main {
         System.out.println("Detalle de la segunda compra registrada (Tarjeta de Crédito - Aplica 5%):");
         Compra compra2 = tienda.getVentas().get(1);
         compra2.mostrarDetalleCompra();
+
+
+
+        Computadora pc4 = new Computadora(cpu3);
+        pc4.agregarPeriferico(teclado1);
+        pc4.agregarPeriferico(pantalla1);
+        try {
+            System.out.println("\nProbando compra sin stock en CPU:");
+            tienda.realizarCompra(cliente1, pc4, pago1);
+        } catch (NoIncluyeException e) {
+            System.out.println(e.getMessage());
+        } catch (SinStockException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
