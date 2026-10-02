@@ -12,11 +12,11 @@ public abstract class Persona {
         this.apellido = apellido;
     }
 
-    public Persona(String nombre, String apellido, LocalDate fecha, String direccion){
+    public Persona(String nombre, String apellido, LocalDate fecha, String DNI){
         this.nombre = nombre;
         this.apellido = apellido;
         this.fecha = fecha;
-        this.direccion = direccion;
+        this.DNI = DNI;
     }
 
     public Persona(String nombre, String apellido, LocalDate fecha){
@@ -38,6 +38,8 @@ public abstract class Persona {
         this.apellido = apellido;
         this.DNI = DNI;
     }
+
+
 
     public String getNombre() {return nombre;}
     public String getApellido() {return apellido;}
