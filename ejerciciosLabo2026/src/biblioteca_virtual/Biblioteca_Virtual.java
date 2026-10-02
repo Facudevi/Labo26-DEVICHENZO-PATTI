@@ -17,7 +17,7 @@ public class Biblioteca_Virtual {
     public HashSet<Usuario_Libro> getListaUsuarios() { return listaUsuarios; }
 
 
-    public void registrarUusario(Usuario_Libro u){ listaUsuarios.add(u); }
+    public void registrarUsuario(Usuario_Libro u){ listaUsuarios.add(u); }
 
     public void agregarLibro(Libro_Electronico l){ listaLibros.add(l); }
     public void modificarLibro(Libro_Electronico l1, Libro_Electronico l2){
