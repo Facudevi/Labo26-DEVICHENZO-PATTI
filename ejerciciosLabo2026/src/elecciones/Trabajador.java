@@ -1,5 +1,4 @@
 package elecciones;
-
 import seres_vivos.humanos.personas.Persona;
 
 import java.time.LocalDate;
@@ -23,10 +22,8 @@ public class Trabajador extends Persona implements Mensajero {
 
     @Override
     public String enviarMensaje() {
-        if (isHorario()) {
-            return mensaje();
-        }
-        return "No está en su horario laboral";
+        if (!isHorario()) throw new NoPuedeEnviarMensajeException("El/la trabajador/a no puede enviar el mensaje");
+        return mensaje();
     }
 
     @Override

@@ -1,5 +1,5 @@
 package elecciones;
 
 public enum Compania {
-    CLARO, PESONAL, MOVISTAR, TUENTI;
+    CLARO, PERSONAL, MOVISTAR, TUENTI;
 }

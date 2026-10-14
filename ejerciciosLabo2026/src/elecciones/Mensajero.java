@@ -1,6 +1,6 @@
 package elecciones;
 
 public interface Mensajero {
-    String enviarMensaje();
+    String enviarMensaje() throws NoPuedeEnviarMensajeException;
     String mensaje();
 }

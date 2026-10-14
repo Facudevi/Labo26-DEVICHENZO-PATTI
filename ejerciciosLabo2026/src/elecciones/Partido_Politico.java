@@ -26,7 +26,11 @@ public class Partido_Politico {
 
     public void hacerCampania(){
         for (Mensajero m : listaMensajeros){
-            m.enviarMensaje();
+            try {
+                System.out.println(m.enviarMensaje());
+            } catch (NoPuedeEnviarMensajeException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 }

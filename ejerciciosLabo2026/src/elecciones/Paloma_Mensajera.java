@@ -1,5 +1,4 @@
 package elecciones;
-
 import colores.Color;
 import seres_vivos.animales.Ave;
 
@@ -15,11 +14,9 @@ public class Paloma_Mensajera extends Ave implements Mensajero {
 
 
     @Override
-    public String enviarMensaje() {
-        if (isVuela()) {
-          return mensaje();
-        }
-        return "No aprendió a volar";
+    public String enviarMensaje(){
+        if (!isVuela()) throw new NoPuedeEnviarMensajeException("La paloma no puede enviar el mensaje");
+        return mensaje();
     }
 
     @Override

@@ -1,32 +1,32 @@
 package elecciones;
-
 import tecnologia.Dispositivo;
 
 public class Telefono_Movil extends Dispositivo implements Mensajero {
     private Compania compania;
     private int numCelular;
-    private boolean prendido, credito;
+    private boolean prendido;
+    private int credito;
 
-    public Telefono_Movil(String numSerie, String fabricante, String modelo, Compania compania, int numCelular, boolean prendido, boolean credito) {
+    public Telefono_Movil(String numSerie, String fabricante, String modelo, Compania compania, int numCelular, boolean prendido) {
         super(numSerie, fabricante, modelo);
         this.compania = compania;
         this.numCelular = numCelular;
         this.prendido = prendido;
-        this.credito = credito;
+        this.credito = 50;
     }
 
     public Compania getCompania() { return compania; }
     public int getNumCelular() { return numCelular; }
     public boolean isPrendido() { return prendido; }
-    public boolean isCredito() { return credito; }
+    public int getCredito() { return credito; }
 
 
     @Override
     public String enviarMensaje() {
-        if (isPrendido() && isCredito()) {
-            return mensaje();
+        if (!isPrendido() || getCredito()<1) {
+            throw new NoPuedeEnviarMensajeException("El telefono no puede enviar el mensaje");
         }
-        return "No pudo conectarse";
+        return mensaje();
     }
 
     @Override
