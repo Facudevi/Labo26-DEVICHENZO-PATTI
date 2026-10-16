@@ -1,4 +1,4 @@
-package deporte;
+package deporte.curling;
 
 public class Partido {
     private Equipo equipo1;

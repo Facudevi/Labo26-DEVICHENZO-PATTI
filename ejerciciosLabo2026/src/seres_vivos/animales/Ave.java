@@ -2,7 +2,7 @@ package seres_vivos.animales;
 
 import colores.Color;
 
-public class Ave {
+public abstract class Ave {
     private String nombre;
     private Color color;
     private String especie;

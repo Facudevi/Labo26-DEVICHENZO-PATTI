@@ -1,4 +1,4 @@
-package deporte;
+package deporte.curling;
 
 import java.util.ArrayList;
 

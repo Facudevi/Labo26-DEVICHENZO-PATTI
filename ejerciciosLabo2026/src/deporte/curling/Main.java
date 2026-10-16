@@ -1,4 +1,4 @@
-package deporte;
+package deporte.curling;
 import seres_vivos.humanos.Jugador;
 
 import java.time.LocalDate;

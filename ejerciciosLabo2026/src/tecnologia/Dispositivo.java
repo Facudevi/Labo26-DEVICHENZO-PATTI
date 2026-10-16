@@ -1,6 +1,6 @@
 package tecnologia;
 
-public class Dispositivo {
+public abstract class Dispositivo {
     private String numSerie, fabricante, modelo;
 
     public Dispositivo(String numSerie, String fabricante, String modelo) {
