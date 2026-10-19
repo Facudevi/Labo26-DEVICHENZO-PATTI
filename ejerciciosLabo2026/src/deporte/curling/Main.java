@@ -1,5 +1,4 @@
 package deporte.curling;
-import seres_vivos.humanos.Jugador;
 
 import java.time.LocalDate;
 
@@ -25,11 +24,11 @@ public class Main {
 
         // Hago un for y le pongo nombre y apellido así para probarlo más rápido
         for (int i=1; i <= 11; i++) {
-            equipo1.agregarJugador(new Jugador("Jugador" + i, "Diaz", LocalDate.of(2000, 7, 9), i));
-            equipo2.agregarJugador(new Jugador("Jugador" + i, "Gomez", LocalDate.of(1998, 3, 13), i));
-            equipo3.agregarJugador(new Jugador("Jugador" + i, "Arias", LocalDate.of(2002, 10, 1), i));
-            equipo4.agregarJugador(new Jugador("Jugador" + i, "Dominguez", LocalDate.of(1988, 12, 31), i));
-            equipo5.agregarJugador(new Jugador("Jugador" + i, "Arias", LocalDate.of(2001, 5, 23), i));
+            equipo1.agregarJugador(new Jugador_Curling("Jugador" + i, "Diaz", LocalDate.of(2000, 7, 9), i));
+            equipo2.agregarJugador(new Jugador_Curling("Jugador" + i, "Gomez", LocalDate.of(1998, 3, 13), i));
+            equipo3.agregarJugador(new Jugador_Curling("Jugador" + i, "Arias", LocalDate.of(2002, 10, 1), i));
+            equipo4.agregarJugador(new Jugador_Curling("Jugador" + i, "Dominguez", LocalDate.of(1988, 12, 31), i));
+            equipo5.agregarJugador(new Jugador_Curling("Jugador" + i, "Arias", LocalDate.of(2001, 5, 23), i));
         }
 
         equipo1.setCapitan(equipo1.getListaJugadores().get(0));

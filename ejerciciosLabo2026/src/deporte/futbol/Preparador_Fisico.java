@@ -17,8 +17,23 @@ public class Preparador_Fisico extends Cuerpo_Tecnico{
 
 
     @Override
-    public boolean requisitos(){
-        if (isMatricula() && this.getAniosExperiencia()>2) return true;
-        else throw new YaTrabajoException("No cumple con los requisitos en el club");
+    public void requisitosContratar() throws NoCumpleRequisitosException{
+        if (!matricula || getAniosExperiencia() < 2) {
+            throw new NoCumpleRequisitosException("El preparador físico no posee matrícula habilitante o no alcanza los 2 años de experiencia");
+        }
+    }
+
+    @Override
+    public void requisitosRenovar() throws NoCumpleRequisitosException{
+        if (!matricula) {
+            throw new NoCumpleRequisitosException("El preparador físico no puede renovar porque su matrícula no se encuentra habilitada");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Preparador Físico: " + super.toString() +
+                " | Especialidad: " + especialidad +
+                " | Matrícula: " + (matricula ? "Habilitada" : "Inhabilitada");
     }
 }

@@ -17,8 +17,23 @@ public class Entrenador extends Cuerpo_Tecnico{
 
 
     @Override
-    public boolean requisitos(){
-        if (isLicencia() && this.getAniosExperiencia()>=3) return true;
-        else throw new NoCumpleRequisitosException("No respeta los requisitos");
+    public void requisitosContratar() throws NoCumpleRequisitosException {
+        if (!licencia || getAniosExperiencia() < 3) {
+            throw new NoCumpleRequisitosException("El entrenador no posee licencia vigente o no alcanza los 3 años mínimos de experiencia");
+        }
+    }
+
+    @Override
+    public void requisitosRenovar() throws NoCumpleRequisitosException {
+        if (!licencia) {
+            throw new NoCumpleRequisitosException("El entrenador no puede renovar porque su licencia no está vigente");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Entrenador: " + super.toString() +
+                " | Campeonatos: " + cantCampeonatos +
+                " | Licencia: " + (licencia ? "Vigente" : "Vencida");
     }
 }

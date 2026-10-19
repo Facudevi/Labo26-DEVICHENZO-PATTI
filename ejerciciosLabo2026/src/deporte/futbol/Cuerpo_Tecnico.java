@@ -1,7 +1,6 @@
 package deporte.futbol;
 
 import java.time.LocalDate;
-import java.util.HashSet;
 
 public abstract class Cuerpo_Tecnico extends Plantel {
     private String titulo;
@@ -15,4 +14,13 @@ public abstract class Cuerpo_Tecnico extends Plantel {
 
     public String getTitulo() { return titulo; }
     public int getAniosExperiencia() { return aniosExperiencia; }
+
+
+    @Override
+    public String toString() {
+        return getNombreCompleto() +
+                " | Edad: " + calcularEdad() +
+                " | Título: " + titulo +
+                " | Experiencia: " + aniosExperiencia + " años";
+    }
 }
