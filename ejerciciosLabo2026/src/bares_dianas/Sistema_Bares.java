@@ -27,7 +27,6 @@ public class Sistema_Bares {
 
     public Diana dianaConMasPuntajes(){
         Diana diana = null;
-        int puntaje = -1;
 
         for(Diana d : listaDianas){
             if (diana == null || d.tieneMasPuntajes(diana)){
