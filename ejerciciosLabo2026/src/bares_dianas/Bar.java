@@ -53,10 +53,6 @@ public class Bar {
     }
 
     public int cantidadBeneficiosTragos(){
-        int cant = 0;
-        for (Beneficio b : beneficios){
-            if (b.esTrago()) cant++;
-        }
-        return cant;
+        return beneficios.size() - acumulables.size();
     }
 }
