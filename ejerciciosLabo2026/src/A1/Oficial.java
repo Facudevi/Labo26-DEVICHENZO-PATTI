@@ -7,6 +7,8 @@ import java.util.Map;
 public class Oficial extends Ayudante{
     private HashMap<String, Integer> stock;
 
+    private static Tamanio tamanioAceptado = Tamanio.MEDIANO;
+
     public Oficial(String nombre, String apellido, LocalDate fechaNacimiento, String aldeaOrigen, Taller taller) {
         super(nombre, apellido, fechaNacimiento, aldeaOrigen, taller);
         this.stock = new HashMap<>();
