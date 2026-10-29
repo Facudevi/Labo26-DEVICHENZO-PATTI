@@ -30,4 +30,28 @@ public class Maestro_Artesano extends Ayudante{
         consumirTiempo(10);
         System.out.println("Tiempo productivo restante: " + tiempoActual);
     }
+
+    @Override
+    public void fabricarRegalo(Regalo regalo) throws ProduccionRegalosException {
+        int tiempoNecesario = 30;
+
+        if (tiempoActual < tiempoNecesario) {
+            throw new ProduccionRegalosException("El Maestro Artesano excede su tiempo disponible para fabricar (" + tiempoActual + " min restantes)");
+        }
+
+        tiempoActual -= tiempoNecesario;
+        System.out.println("El Maestro Artesano " + getNombre() + " fabricó un regalo " + regalo.getTamanio() + ": " + regalo.getNombre() + " | Tiempo restante: " + tiempoActual + " min");
+    }
+
+    @Override
+    public void envolverRegalo(Regalo regalo) throws ProduccionRegalosException {
+        int tiempoNecesario = 15;
+
+        if (tiempoActual < tiempoNecesario) {
+            throw new ProduccionRegalosException("El Maestro Artesano excede su tiempo disponible para envolver (" + tiempoActual + " min restantes)");
+        }
+
+        tiempoActual -= tiempoNecesario;
+        System.out.println("El Maestro " + getNombre() + " envolvió un regalo " + regalo.getTamanio() + ": " + regalo.getNombre() + " | Tiempo restante: " + tiempoActual + " min");
+    }
 }

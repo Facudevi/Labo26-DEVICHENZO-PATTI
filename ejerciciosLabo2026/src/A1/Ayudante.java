@@ -37,4 +37,12 @@ public abstract class Ayudante {
     }
 
     public abstract void prepararEstacion();
+    public abstract void fabricarRegalo(Regalo regalo) throws ProduccionRegalosException;
+    public abstract void envolverRegalo(Regalo regalo) throws ProduccionRegalosException;
+
+    @Override
+    public String toString() {
+        return nombre + " " + apellido +
+                " | Taller: " + taller;
+    }
 }
