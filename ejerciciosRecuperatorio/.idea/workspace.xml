@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="530989e8-f812-44ea-a78f-af766fa5d179" name="Changes" comment="" />
+    <list default="true" id="530989e8-f812-44ea-a78f-af766fa5d179" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ejerciciosLabo2026/src/A2/Bizcochuelo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosLabo2026/src/A2/Brownie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosLabo2026/src/A2/Cookie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosLabo2026/src/A2/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosLabo2026/src/A2/NumeroInvalido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosLabo2026/src/A2/Preparacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosLabo2026/src/A2/SinStockException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosLabo2026/src/A2/Sistema.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosLabo2026/src/A2/Topping.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejerciciosLabo2026/src/A2/Vendible.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,8 +56,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
       </set>
     </attachedChunks>
   </component>
